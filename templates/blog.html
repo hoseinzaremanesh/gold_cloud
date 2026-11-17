@@ -1,0 +1,2417 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="مجله لوکس امرالد - داستان‌های ظرافت، جواهرات بی‌زمان و سبک زندگی اشرافی"
+    />
+    <title>امرالد | مجله لوکس - ظرافت سبک کهن</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Lalezar";
+        src:
+          url("./fonts/Lalezar-Regular.woff") format("woff"),
+          url("./fonts/Lalezar-Regular.otf") format("otf"),
+          url("./fonts/Lalezar-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lalezar", sans-serif;
+        font-weight: 300;
+        color: #1a1a1a;
+        overflow-x: hidden;
+        line-height: 1.7;
+        background-color: #f5f3ee;
+      }
+
+      :root {
+        --emerald: #0d3d2e;
+        --emerald-light: #1a5c46;
+        --royal-gold: #b8942e;
+        --gold-light: #d4af37;
+        --cream: #f5f3ee;
+        --white: #ffffff;
+        --text-dark: #1a1a1a;
+        --text-body: #2d2d2d;
+        --text-muted: #555555;
+        --card-bg: #ffffff;
+        --card-border: #e8e0d0;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 30px 50px -15px rgba(0, 0, 0, 0.12);
+        --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .logo,
+      .section-title,
+      .hero-title,
+      .card-title {
+        font-family: "Lalezar";
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      .top-bar {
+        background: #0a1f18;
+        color: #d4af37;
+        text-align: center;
+        padding: 12px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        padding: 10px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background: rgba(6, 19, 17, 0.6);
+        backdrop-filter: blur(10px);
+      }
+
+      .logo h2 {
+        color: #fff;
+        font-size: 34px;
+        font-family: "Cormorant Garamond";
+        letter-spacing: 4px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: 0.4s;
+        font-family: "Lalezar";
+      }
+
+      .nav-links a:hover {
+        color: #d4af37;
+      }
+
+      .nav-btn {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-btn a {
+        text-decoration: none;
+      }
+
+      .nav-btn .log,
+      .nav-btn .sign {
+        border: 1px solid #d4af37;
+        padding: 0 12px;
+        border-radius: 20px;
+        color: #fff;
+        padding-bottom: 3px;
+        transition: 0.3s;
+        font-family: "Lalezar";
+      }
+
+      .nav-btn .log {
+        background: #d4af37;
+      }
+      .nav-btn .log:hover {
+        background: transparent;
+      }
+      .nav-btn .sign:hover {
+        background: #d4af37;
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-icons a {
+        color: #fff;
+        font-size: 14px;
+        transition: 0.4s;
+      }
+
+      .nav-icons a:hover {
+        color: #d4af37;
+      }
+
+      .nav-icons i {
+        color: #d8b56a;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .nav-icons i:hover {
+        color: antiquewhite;
+        transform: translateY(-3px);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 101;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .hamburger span {
+        width: 28px;
+        height: 2px;
+        background: #d8b56a;
+        transition: 0.3s;
+        border-radius: 2px;
+        display: block;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .hero-blog {
+        min-height: 90vh;
+        background: linear-gradient(125deg, #0a2a20, #021313);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        padding: 0 5%;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-tag {
+        color: #d4af37;
+        letter-spacing: 4px;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: "Lalezar";
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        color: #fbf8f0;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero-desc {
+        color: rgba(250, 246, 233, 0.85);
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Lalezar";
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-gold,
+      .btn-emerald {
+        padding: 0.8rem 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 40px;
+        font-family: "Lalezar";
+        letter-spacing: 0.5px;
+      }
+
+      .btn-gold {
+        background: transparent;
+        border: 2px solid #d4af37;
+        color: #d4af37;
+      }
+
+      .btn-gold:hover {
+        background: #d4af37;
+        color: #0d3d2e;
+      }
+
+      .btn-emerald {
+        background: #0d3d2e;
+        border: 2px solid #0d3d2e;
+        color: white;
+      }
+
+      .btn-emerald:hover {
+        background: #0a2a20;
+        border-color: #0a2a20;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #d4af37;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      .section {
+        padding: 5rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2.6rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--emerald);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 80px;
+        height: 3px;
+        background: var(--gold-light);
+        display: block;
+        margin: 0.8rem auto 0;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1.2rem;
+        margin: 1rem 0;
+      }
+
+      .cat-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        transition: var(--transition);
+        border: 1px solid #e8e0d0;
+        cursor: pointer;
+        color: var(--text-dark);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .cat-card:hover {
+        border-color: var(--gold-light);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .cat-card.active {
+        background: var(--emerald);
+        color: white;
+        border-color: var(--gold-light);
+        box-shadow: var(--shadow-md);
+      }
+
+      .cat-card i {
+        font-size: 1.8rem;
+        color: var(--royal-gold);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .cat-card.active i {
+        color: #e2c28b;
+      }
+
+      .cat-card h4 {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .featured-article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #e8e0d0;
+        box-shadow: 0 5px 10px rgba(23, 71, 55, 0.15);
+      }
+
+      .featured-img {
+        height: 100%;
+        min-height: 400px;
+      }
+
+      .featured-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .featured-content {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .category-badge {
+        background: var(--emerald);
+        display: inline-block;
+        padding: 0.3rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #fff;
+        width: fit-content;
+        font-family: "Lalezar", sans-serif;
+        letter-spacing: 1px;
+      }
+
+      .featured-content h2 {
+        font-size: 2.2rem;
+        margin: 1rem 0;
+        color: var(--text-dark);
+      }
+
+      .featured-content p {
+        color: var(--text-body);
+        line-height: 1.9;
+        margin-bottom: 1.5rem;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1rem 0;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .read-more {
+        color: var(--emerald);
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+        width: fit-content;
+        font-family: "Lalezar", sans-serif;
+        font-size: 1rem;
+      }
+
+      .read-more:hover {
+        color: var(--royal-gold);
+        gap: 0.8rem;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: var(--transition);
+        border: 1px solid #e8e0d0;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold-light);
+        box-shadow: 0 8px 30px rgba(10, 37, 32, 0.15);
+      }
+
+      .blog-card .card-img-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .blog-card:hover img {
+        transform: scale(1.08);
+      }
+
+      .card-content {
+        padding: 1.8rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .card-content .category-badge {
+        background: #f0ebe0;
+        color: var(--emerald);
+        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        color: var(--text-dark);
+        line-height: 1.4;
+        transition: color 0.3s;
+      }
+
+      .blog-card:hover .card-title {
+        color: var(--emerald);
+      }
+
+      .card-content p {
+        color: var(--text-body);
+        margin-bottom: 1.2rem;
+        flex: 1;
+        font-family: "Lalezar", sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .card-content .article-meta {
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid #f0ebe0;
+      }
+
+      .card-content .read-more {
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .author-spotlight {
+        display: flex;
+        gap: 2.5rem;
+        background: #fff;
+        border-radius: 24px;
+        padding: 2.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 1rem 0;
+        border: 1px solid #e8e0d0;
+        box-shadow: var(--shadow-md);
+      }
+
+      .author-img {
+        flex-shrink: 0;
+      }
+
+      .author-img img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--gold-light);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+      }
+
+      .author-bio h3 {
+        font-size: 1.8rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .author-bio p {
+        color: var(--text-body);
+        margin-bottom: 0.8rem;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .social-icons i {
+        font-size: 1.3rem;
+        margin-left: 1rem;
+        color: var(--royal-gold);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .social-icons i:hover {
+        color: var(--emerald);
+        transform: translateY(-3px);
+      }
+
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .story-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border: 1px solid #e8e0d0;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .story-card:hover {
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-8px);
+        border-color: var(--gold-light);
+      }
+
+      .story-card i {
+        font-size: 2.5rem;
+        color: var(--royal-gold);
+        margin-bottom: 1.2rem;
+      }
+
+      .story-card h3 {
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+      }
+
+      .story-card p {
+        color: var(--text-body);
+        font-family: "Lalezar", sans-serif;
+        line-height: 1.8;
+      }
+
+      .story-card strong {
+        color: var(--emerald);
+        font-weight: 600;
+      }
+
+      .newsletter {
+        background-image: url(./images/features.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 32px;
+        padding: 3.5rem 2rem;
+        text-align: center;
+        color: white;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+      }
+
+      .newsletter::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 42, 32, 0.7);
+        border-radius: 32px;
+      }
+
+      .newsletter h2,
+      .newsletter p,
+      .newsletter form {
+        position: relative;
+        z-index: 1;
+      }
+
+      .newsletter h2 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+        color: #fff;
+      }
+
+      .newsletter p {
+        color: rgba(255, 255, 240, 0.9);
+        margin-bottom: 1.5rem;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .newsletter form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .newsletter input {
+        padding: 1rem 1.5rem;
+        width: 320px;
+        border-radius: 60px;
+        border: 2px solid rgba(212, 175, 55, 0.6);
+        font-family: "Lalezar", sans-serif;
+        background: rgba(255, 255, 255, 0.95);
+        color: #1a1a1a;
+        transition: 0.3s;
+      }
+
+      .newsletter input::placeholder {
+        color: #666;
+      }
+
+      .newsletter input:focus {
+        outline: none;
+        border-color: var(--gold-light);
+        background: #fff;
+      }
+
+      .newsletter .btn-gold {
+        background: var(--gold-light);
+        color: #0a1f18;
+        border: none;
+        padding: 1rem 2rem;
+        font-weight: 700;
+      }
+
+      .newsletter .btn-gold:hover {
+        background: #e2c28b;
+        transform: translateY(-3px);
+      }
+
+      .footer {
+        background: #0a1815;
+        padding-top: 100px;
+        border-top: 1px solid rgba(216, 181, 106, 0.15);
+        margin-top: 2rem;
+      }
+
+      .footer-container {
+        width: 84%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+        gap: 60px;
+      }
+
+      .footer-brand h2 {
+        color: #d8b56a;
+        font-size: 34px;
+        font-family: "Cormorant Garamond", "Lalezar", serif;
+        margin-bottom: 20px;
+      }
+
+      .footer-brand p {
+        color: #bdbdbd;
+        line-height: 2;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .footer-links h3 {
+        color: white;
+        margin-bottom: 25px;
+        font-family: "Lalezar", sans-serif;
+        font-weight: 300;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+      .footer-links li {
+        margin-bottom: 14px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #bdbdbd;
+        font-family: "Lalezar", sans-serif;
+        transition: 0.4s;
+      }
+
+      .footer-links a:hover {
+        color: #d8b56a;
+        padding-right: 8px;
+      }
+
+      .footer-newsletter h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-family: "Lalezar", sans-serif;
+        font-weight: 300;
+      }
+
+      .footer-newsletter p {
+        color: #bdbdbd;
+        margin-bottom: 20px;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .footer-newsletter form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-newsletter input {
+        height: 55px;
+        padding: 0 15px;
+        background: #0a2520;
+        border: 1px solid rgba(216, 181, 106, 0.2);
+        color: white;
+        outline: none;
+        font-family: "Lalezar", sans-serif;
+        border-radius: 8px;
+      }
+
+      .footer-newsletter input:focus {
+        border-color: #d8b56a;
+      }
+
+      .footer-newsletter button {
+        height: 55px;
+        border: none;
+        background: #d8b56a;
+        font-family: "Lalezar", sans-serif;
+        color: #0a1815;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.4s;
+        border-radius: 8px;
+      }
+
+      .footer-newsletter button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(216, 181, 106, 0.3);
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 70px;
+      }
+
+      .footer-social a {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(216, 181, 106, 0.25);
+        color: #d8b56a;
+        text-decoration: none;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      .footer-social a:hover {
+        background: #d8b56a;
+        color: #0a1815;
+        transform: translateY(-5px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 60px;
+        padding: 25px;
+        border-top: 1px solid rgba(216, 181, 106, 0.1);
+      }
+
+      .footer-bottom p {
+        color: #8e8e8e;
+        font-family: "Lalezar", sans-serif;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: var(--gold-light);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 99;
+        border: none;
+        color: #0a1f18;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .back-to-top:hover {
+        background: #b8942e;
+        transform: translateY(-3px);
+      }
+
+      /* =========================================== */
+      /* ========== RESPONSIVE DESIGN ========== */
+      /* =========================================== */
+
+      @media (max-width: 1200px) {
+        .hero-title {
+          font-size: 3.5rem;
+        }
+        .section {
+          padding: 4rem 4%;
+        }
+        .section-title {
+          font-size: 2.3rem;
+        }
+
+        .category-grid {
+          grid-template-columns: repeat(7, 1fr);
+          gap: 0.8rem;
+        }
+
+        .cat-card {
+          padding: 1.2rem 0.5rem;
+          border-radius: 15px;
+        }
+
+        .cat-card i {
+          font-size: 1.4rem;
+          margin-bottom: 0.3rem;
+        }
+        .cat-card h4 {
+          font-size: 0.7rem;
+          margin-top: 0.3rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.2rem;
+        }
+
+        .blog-card img {
+          height: 200px;
+        }
+        .card-content {
+          padding: 1.3rem;
+        }
+        .card-title {
+          font-size: 1.2rem;
+        }
+        .card-content p {
+          font-size: 0.85rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .featured-content {
+          padding: 2.5rem;
+        }
+        .featured-content h2 {
+          font-size: 1.9rem;
+        }
+
+        .stories-grid {
+          gap: 1.5rem;
+        }
+        .story-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .footer {
+          padding-top: 80px;
+        }
+        .footer-container {
+          grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+          width: 90%;
+          gap: 35px;
+        }
+        .footer-brand h2 {
+          font-size: 28px;
+        }
+        .footer-brand p {
+          font-size: 13px;
+        }
+        .footer-links h3 {
+          font-size: 16px;
+          margin-bottom: 18px;
+        }
+        .footer-links a {
+          font-size: 13px;
+        }
+        .footer-links li {
+          margin-bottom: 10px;
+        }
+        .footer-newsletter h3 {
+          font-size: 16px;
+        }
+        .footer-newsletter p {
+          font-size: 13px;
+        }
+        .footer-newsletter input {
+          height: 48px;
+          font-size: 13px;
+        }
+        .footer-newsletter button {
+          height: 48px;
+          font-size: 14px;
+        }
+        .footer-social {
+          margin-top: 50px;
+          gap: 15px;
+        }
+        .footer-social a {
+          width: 48px;
+          height: 48px;
+          font-size: 15px;
+        }
+        .footer-bottom {
+          margin-top: 45px;
+          padding: 22px;
+        }
+        .footer-bottom p {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .top-bar {
+          display: none;
+        }
+
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 15px 5%;
+          background: rgba(6, 19, 17, 0.85);
+          backdrop-filter: blur(15px);
+          z-index: 100;
+        }
+
+        .hamburger {
+          display: flex;
+          order: 1;
+        }
+        .logo {
+          order: 2;
+          margin-right: auto;
+          margin-left: 15px;
+        }
+        .nav-icons {
+          display: none;
+        }
+        .nav-btn {
+          order: 4;
+          gap: 12px;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 75px;
+          right: -100%;
+          width: 75%;
+          height: calc(100vh - 75px);
+          background: rgba(10, 26, 24, 0.95);
+          backdrop-filter: blur(15px);
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 50px;
+          gap: 35px;
+          transition: 0.4s;
+          z-index: 999;
+          border-right: 2px solid #d4af37;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+        .nav-links li a {
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .nav-btn a {
+          padding: 4px 14px;
+          font-size: 12px;
+        }
+        .logo h2 {
+          font-size: 28px;
+        }
+
+        .hero-blog {
+          min-height: 70vh;
+        }
+        .hero-title {
+          font-size: 2.8rem;
+        }
+        .hero-desc {
+          font-size: 1rem;
+        }
+
+        .section {
+          padding: 3.5rem 4%;
+        }
+        .section-title {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .category-grid {
+          grid-template-columns: repeat(7, 1fr);
+          gap: 0.5rem;
+        }
+        .cat-card {
+          padding: 0.8rem 0.3rem;
+          border-radius: 12px;
+        }
+        .cat-card i {
+          font-size: 1.1rem;
+          margin-bottom: 0.2rem;
+        }
+        .cat-card h4 {
+          font-size: 0.6rem;
+          margin-top: 0.2rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.2rem;
+        }
+        .blog-card img {
+          height: 190px;
+        }
+        .card-content {
+          padding: 1.2rem;
+        }
+        .card-title {
+          font-size: 1.1rem;
+        }
+        .card-content p {
+          font-size: 0.8rem;
+          margin-bottom: 0.7rem;
+        }
+        .article-meta {
+          font-size: 0.75rem;
+          gap: 0.8rem;
+        }
+        .read-more {
+          font-size: 0.85rem;
+        }
+
+        .featured-article {
+          grid-template-columns: 1fr;
+        }
+        .featured-img {
+          min-height: 280px;
+        }
+        .featured-content {
+          padding: 2rem;
+        }
+        .featured-content h2 {
+          font-size: 1.6rem;
+        }
+        .featured-content p {
+          font-size: 0.9rem;
+        }
+
+        .stories-grid {
+          gap: 1.2rem;
+        }
+        .story-card {
+          padding: 1.8rem 1.2rem;
+        }
+
+        .newsletter {
+          padding: 2.5rem 1.5rem;
+        }
+        .newsletter h2 {
+          font-size: 1.6rem;
+        }
+        .newsletter input {
+          width: 260px;
+        }
+
+        .footer {
+          padding-top: 60px;
+        }
+        .footer-container {
+          width: 92%;
+          grid-template-columns: 1fr 1fr;
+          gap: 30px 25px;
+          text-align: center;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+          grid-row: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .footer-brand p {
+          max-width: 350px;
+        }
+        .footer-links:nth-of-type(1) {
+          grid-column: 1;
+          grid-row: 2;
+          text-align: center;
+        }
+        .footer-links:nth-of-type(2) {
+          grid-column: 2;
+          grid-row: 2;
+          text-align: center;
+        }
+        .footer-newsletter {
+          grid-column: 1 / -1;
+          grid-row: 3;
+          text-align: center;
+        }
+        .footer-brand h2 {
+          font-size: 24px;
+        }
+        .footer-brand p {
+          font-size: 12px;
+        }
+        .footer-links h3 {
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+        .footer-links ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        .footer-links li {
+          margin-bottom: 6px;
+        }
+        .footer-links a {
+          font-size: 12px;
+        }
+        .footer-newsletter h3 {
+          font-size: 14px;
+        }
+        .footer-newsletter p {
+          font-size: 12px;
+        }
+        .footer-newsletter form {
+          max-width: 350px;
+          margin: 0 auto;
+        }
+        .footer-newsletter input {
+          height: 44px;
+          font-size: 12px;
+        }
+        .footer-newsletter button {
+          height: 44px;
+          font-size: 13px;
+        }
+        .footer-social {
+          margin-top: 35px;
+          gap: 12px;
+        }
+        .footer-social a {
+          width: 42px;
+          height: 42px;
+          font-size: 14px;
+        }
+        .footer-bottom {
+          margin-top: 35px;
+          padding: 18px;
+        }
+        .footer-bottom p {
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo h2 {
+          font-size: 24px;
+        }
+        .nav-btn {
+          gap: 8px;
+        }
+        .nav-btn a {
+          padding: 4px 10px;
+          font-size: 11px;
+        }
+        .nav-links {
+          width: 85%;
+        }
+
+        .hero-blog {
+          min-height: 65vh;
+        }
+        .hero-title {
+          font-size: 2.2rem;
+        }
+        .hero-desc {
+          font-size: 0.9rem;
+        }
+        .btn-gold,
+        .btn-emerald {
+          padding: 0.7rem 1.5rem;
+          font-size: 0.85rem;
+        }
+
+        .section {
+          padding: 3rem 4%;
+        }
+        .section-title {
+          font-size: 1.7rem;
+        }
+
+        .category-grid {
+          grid-template-columns: repeat(7, 1fr);
+          gap: 0.4rem;
+        }
+        .cat-card {
+          padding: 0.6rem 0.2rem;
+          border-radius: 10px;
+        }
+        .cat-card i {
+          font-size: 0.9rem;
+          margin-bottom: 0.1rem;
+        }
+        .cat-card h4 {
+          font-size: 0.5rem;
+          margin-top: 0.1rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.8rem;
+        }
+        .blog-card {
+          border-radius: 15px;
+        }
+        .blog-card img {
+          height: 160px;
+        }
+        .card-content {
+          padding: 1rem 0.8rem;
+        }
+        .card-content .category-badge {
+          font-size: 0.6rem;
+          padding: 0.2rem 0.7rem;
+          margin-bottom: 0.3rem;
+        }
+        .card-title {
+          font-size: 0.95rem;
+          margin: 0.3rem 0;
+        }
+        .card-content p {
+          font-size: 0.75rem;
+          margin-bottom: 0.6rem;
+          line-height: 1.6;
+        }
+        .article-meta {
+          font-size: 0.65rem;
+          gap: 0.5rem;
+          padding-top: 0.7rem;
+        }
+        .read-more {
+          font-size: 0.75rem;
+          margin-top: 0.5rem;
+        }
+
+        .featured-img {
+          min-height: 220px;
+        }
+        .featured-content {
+          padding: 1.5rem;
+        }
+        .featured-content h2 {
+          font-size: 1.3rem;
+        }
+        .featured-content p {
+          font-size: 0.85rem;
+          margin-bottom: 1rem;
+        }
+
+        .author-spotlight {
+          flex-direction: column;
+          text-align: center;
+          padding: 2rem;
+          gap: 1.5rem;
+        }
+        .author-img img {
+          width: 120px;
+          height: 120px;
+        }
+        .author-bio h3 {
+          font-size: 1.5rem;
+        }
+
+        /* Stories - 2 ستونه با کارت سوم وسط */
+        .stories-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.8rem;
+        }
+        .story-card {
+          padding: 1.5rem 1rem;
+          border-radius: 18px;
+        }
+        .story-card:nth-child(3) {
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .story-card i {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+        .story-card h3 {
+          font-size: 1.1rem;
+          margin-bottom: 0.6rem;
+        }
+        .story-card p {
+          font-size: 0.85rem;
+        }
+        .story-card .btn-gold {
+          padding: 0.5rem 1rem;
+          font-size: 0.75rem;
+          margin-top: 0.8rem !important;
+        }
+
+        .newsletter {
+          padding: 2rem 1.2rem;
+          border-radius: 24px;
+        }
+        .newsletter h2 {
+          font-size: 1.4rem;
+        }
+        .newsletter p {
+          font-size: 0.9rem;
+        }
+        .newsletter input {
+          width: 100%;
+          padding: 0.8rem 1.2rem;
+          font-size: 0.9rem;
+        }
+        .newsletter .btn-gold {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .footer {
+          padding-top: 45px;
+        }
+        .footer-container {
+          width: 92%;
+          grid-template-columns: 1fr 1fr;
+          gap: 25px 15px;
+          text-align: center;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+          grid-row: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .footer-links:nth-of-type(1) {
+          grid-column: 1;
+          grid-row: 2;
+          text-align: center;
+        }
+        .footer-links:nth-of-type(2) {
+          grid-column: 2;
+          grid-row: 2;
+          text-align: center;
+        }
+        .footer-newsletter {
+          grid-column: 1 / -1;
+          grid-row: 3;
+          text-align: center;
+        }
+        .footer-brand h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .footer-brand p {
+          font-size: 12px;
+          max-width: 300px;
+          line-height: 1.8;
+        }
+        .footer-links h3 {
+          font-size: 14px;
+          margin-bottom: 12px;
+        }
+        .footer-links ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        .footer-links li {
+          margin-bottom: 6px;
+        }
+        .footer-links a {
+          font-size: 12px;
+        }
+        .footer-newsletter h3 {
+          font-size: 14px;
+        }
+        .footer-newsletter p {
+          font-size: 12px;
+        }
+        .footer-newsletter form {
+          max-width: 350px;
+          margin: 0 auto;
+        }
+        .footer-newsletter input {
+          height: 44px;
+          font-size: 12px;
+          text-align: center;
+        }
+        .footer-newsletter button {
+          height: 44px;
+          font-size: 13px;
+        }
+        .footer-social {
+          margin-top: 30px;
+          gap: 12px;
+        }
+        .footer-social a {
+          width: 38px;
+          height: 38px;
+          font-size: 13px;
+        }
+        .footer-bottom {
+          margin-top: 30px;
+          padding: 18px;
+        }
+        .footer-bottom p {
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo h2 {
+          font-size: 20px;
+          letter-spacing: 2px;
+        }
+        .nav-btn a {
+          padding: 3px 7px;
+          font-size: 9px;
+          border-radius: 12px;
+        }
+        .nav-links {
+          width: 85%;
+          padding-top: 35px;
+          gap: 25px;
+        }
+        .nav-links li a {
+          font-size: 15px;
+        }
+        .hamburger span {
+          width: 22px;
+          height: 2px;
+        }
+
+        .hero-blog {
+          min-height: 55vh;
+        }
+        .hero-title {
+          font-size: 1.8rem;
+        }
+        .hero-desc {
+          font-size: 0.8rem;
+        }
+        .btn-gold,
+        .btn-emerald {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.8rem;
+          border-radius: 30px;
+        }
+        .btn-group {
+          gap: 0.5rem;
+        }
+
+        .section {
+          padding: 2.5rem 3%;
+        }
+        .section-title {
+          font-size: 1.4rem;
+        }
+        .section-title::after {
+          width: 50px;
+          height: 2px;
+        }
+
+        .category-grid {
+          grid-template-columns: repeat(7, 1fr);
+          gap: 0.3rem;
+        }
+        .cat-card {
+          padding: 0.5rem 0.15rem;
+          border-radius: 8px;
+        }
+        .cat-card i {
+          font-size: 0.7rem;
+          margin-bottom: 0.1rem;
+        }
+        .cat-card h4 {
+          font-size: 0.45rem;
+          margin-top: 0.1rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+        }
+        .blog-card {
+          border-radius: 12px;
+        }
+        .blog-card img {
+          height: 130px;
+        }
+        .card-content {
+          padding: 0.8rem 0.6rem;
+        }
+        .card-content .category-badge {
+          font-size: 0.55rem;
+          padding: 0.15rem 0.5rem;
+        }
+        .card-title {
+          font-size: 0.8rem;
+        }
+        .card-content p {
+          font-size: 0.7rem;
+          margin-bottom: 0.5rem;
+          line-height: 1.5;
+        }
+        .article-meta {
+          font-size: 0.6rem;
+          gap: 0.4rem;
+          padding-top: 0.6rem;
+        }
+        .read-more {
+          font-size: 0.7rem;
+          margin-top: 0.4rem;
+        }
+
+        .featured-img {
+          min-height: 180px;
+        }
+        .featured-content {
+          padding: 1.2rem;
+        }
+        .featured-content h2 {
+          font-size: 1.1rem;
+        }
+        .featured-content p {
+          font-size: 0.8rem;
+        }
+
+        .author-spotlight {
+          padding: 1.5rem;
+          border-radius: 18px;
+        }
+        .author-img img {
+          width: 100px;
+          height: 100px;
+        }
+        .author-bio h3 {
+          font-size: 1.3rem;
+        }
+        .author-bio p {
+          font-size: 0.85rem;
+        }
+
+        /* Stories - 2 ستونه با کارت سوم وسط */
+        .stories-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+        }
+        .story-card {
+          padding: 1.2rem 0.8rem;
+          border-radius: 14px;
+        }
+        .story-card:nth-child(3) {
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+        .story-card i {
+          font-size: 1.3rem;
+          margin-bottom: 0.6rem;
+        }
+        .story-card h3 {
+          font-size: 0.9rem;
+          margin-bottom: 0.4rem;
+        }
+        .story-card p {
+          font-size: 0.75rem;
+        }
+        .story-card .btn-gold {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.7rem;
+          margin-top: 0.6rem !important;
+        }
+
+        .newsletter {
+          padding: 1.8rem 1rem;
+          border-radius: 20px;
+        }
+        .newsletter h2 {
+          font-size: 1.2rem;
+        }
+        .newsletter p {
+          font-size: 0.8rem;
+        }
+        .newsletter input {
+          padding: 0.7rem 1rem;
+          font-size: 0.8rem;
+        }
+        .newsletter .btn-gold {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.8rem;
+        }
+
+        .back-to-top {
+          width: 40px;
+          height: 40px;
+          bottom: 20px;
+          left: 20px;
+          font-size: 1rem;
+        }
+
+        .footer {
+          padding-top: 35px;
+        }
+        .footer-container {
+          width: 94%;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px 10px;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+        .footer-links:nth-of-type(1) {
+          grid-column: 1;
+        }
+        .footer-links:nth-of-type(2) {
+          grid-column: 2;
+        }
+        .footer-newsletter {
+          grid-column: 1 / -1;
+        }
+        .footer-brand h2 {
+          font-size: 22px;
+        }
+        .footer-brand p {
+          font-size: 11px;
+          max-width: 250px;
+        }
+        .footer-links h3 {
+          font-size: 13px;
+        }
+        .footer-links a {
+          font-size: 11px;
+        }
+        .footer-newsletter h3 {
+          font-size: 13px;
+        }
+        .footer-newsletter p {
+          font-size: 11px;
+        }
+        .footer-newsletter input {
+          height: 38px;
+          font-size: 11px;
+        }
+        .footer-newsletter button {
+          height: 38px;
+          font-size: 12px;
+        }
+        .footer-social a {
+          width: 34px;
+          height: 34px;
+          font-size: 12px;
+        }
+        .footer-bottom p {
+          font-size: 10px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .hero-title {
+          font-size: 1.5rem;
+        }
+        .hero-desc {
+          font-size: 0.75rem;
+        }
+        .btn-gold,
+        .btn-emerald {
+          padding: 0.5rem 1rem;
+          font-size: 0.75rem;
+        }
+        .section-title {
+          font-size: 1.2rem;
+        }
+
+        .cat-card i {
+          font-size: 0.6rem;
+        }
+        .cat-card h4 {
+          font-size: 0.4rem;
+        }
+
+        .blog-card img {
+          height: 110px;
+        }
+        .card-title {
+          font-size: 0.7rem;
+        }
+        .card-content p {
+          font-size: 0.65rem;
+        }
+
+        .author-img img {
+          width: 80px;
+          height: 80px;
+        }
+
+        .story-card {
+          padding: 1rem 0.6rem;
+        }
+        .story-card:nth-child(3) {
+          max-width: 300px;
+        }
+        .story-card h3 {
+          font-size: 0.8rem;
+        }
+        .story-card p {
+          font-size: 0.7rem;
+        }
+
+        .footer-container {
+          gap: 15px 8px;
+        }
+        .footer-newsletter form {
+          max-width: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">ارسال رایگان برای خریدهای بالای 5 میلیون تومان</div>
+
+    <nav class="navbar" id="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="logo"><h2>AZARYAZDAN</h2></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./template/landing.html">خانه</a></li>
+        <li><a href="./template/shop.html">فروشگاه</a></li>
+        <li><a href="./blog.html">وبلاگ</a></li>
+        <li><a href="./about.html">درباره ما</a></li>
+        <li><a href="#">ارتباط با ما</a></li>
+      </ul>
+      <div class="nav-btn">
+        <a href="./login.html" class="log">ورود</a>
+        <a href="./login.html" class="sign">ثبت‌نام</a>
+      </div>
+      <div class="nav-icons">
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+    </nav>
+
+    <section class="hero-blog">
+      <div class="hero-content">
+        <div class="hero-tag">مجله لوکس</div>
+        <h1 class="hero-title">داستان‌های ظرافت و زیبایی بی‌زمان</h1>
+        <p class="hero-desc">
+          ترندهای جواهرات، insights صنعت‌گری و هنر زندگی اشرافی کهن را کشف کنید.
+        </p>
+        <div class="btn-group">
+          <button
+            class="btn-gold"
+            onclick="
+              document
+                .getElementById('articlesGrid')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            کاوش مقالات
+          </button>
+          <button
+            class="btn-emerald"
+            onclick="
+              document
+                .getElementById('articlesGrid')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            جدیدترین داستان‌ها
+          </button>
+        </div>
+      </div>
+      <div
+        class="scroll-indicator"
+        onclick="
+          window.scrollBy({ top: window.innerHeight - 80, behavior: 'smooth' })
+        "
+      >
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">مرور بر اساس علاقه</h2>
+      <div class="category-grid" id="categoryGrid">
+        <div class="cat-card active" data-cat="همه">
+          <i class="fas fa-gem"></i>
+          <h4>همه</h4>
+        </div>
+        <div class="cat-card" data-cat="راهنماهای جواهرات">
+          <i class="fas fa-book-open"></i>
+          <h4>راهنماهای جواهرات</h4>
+        </div>
+        <div class="cat-card" data-cat="سبک زندگی لوکس">
+          <i class="fas fa-crown"></i>
+          <h4>سبک زندگی لوکس</h4>
+        </div>
+        <div class="cat-card" data-cat="سنگ‌های قیمتی">
+          <i class="fas fa-gem"></i>
+          <h4>سنگ‌های قیمتی</h4>
+        </div>
+        <div class="cat-card" data-cat="ترندهای مد">
+          <i class="fas fa-tshirt"></i>
+          <h4>ترندهای مد</h4>
+        </div>
+        <div class="cat-card" data-cat="مراقبت از جواهرات">
+          <i class="fas fa-hand-sparkles"></i>
+          <h4>مراقبت از جواهرات</h4>
+        </div>
+        <div class="cat-card" data-cat="داستان‌های برند">
+          <i class="fas fa-feather-alt"></i>
+          <h4>داستان‌های برند</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featuredSection">
+      <div
+        class="featured-article"
+        id="featuredArticle"
+        data-category="راهنماهای جواهرات"
+      >
+        <div class="featured-img">
+          <img
+            src="./images/blog10.jpeg"
+            alt="هنر انتخاب زمردهای طبیعی"
+            loading="lazy"
+          />
+        </div>
+        <div class="featured-content">
+          <span class="category-badge">راهنماهای جواهرات</span>
+          <h2>هنر انتخاب زمردهای طبیعی</h2>
+          <p>
+            درک رنگ، شفافیت و منشأ برای قطعات موروثی. راهنمای جامع برای
+            کلکسیونرها و علاقه‌مندان به سنگ‌های قیمتی.
+          </p>
+          <div class="article-meta">
+            <span><i class="far fa-user"></i> ایزابلا روسی</span>
+            <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۵-۱۲</span>
+            <span><i class="far fa-clock"></i> ۶ دقیقه مطالعه</span>
+          </div>
+          <a
+            class="read-more"
+            href="#"
+            onclick="
+              alert('باز کردن مقاله');
+              return false;
+            "
+            >کاوش مقاله کامل ←</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">جدیدترین از کارگاه</h2>
+      <div class="blog-grid" id="articlesGrid">
+        <article class="blog-card" data-category="سبک زندگی لوکس">
+          <div class="card-img-wrapper">
+            <img
+              src="./images/blog.jpeg"
+              alt="سبک کهن: اتیکت جواهرات"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">سبک زندگی لوکس</span>
+            <h3 class="card-title">سبک کهن: اتیکت جواهرات</h3>
+            <p>
+              چگونه قطعات موروثی را با اعتماد به نفس آرام بپوشیم و در هر مراسمی
+              بدرخشیم.
+            </p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۵-۰۵</span
+              ><span><i class="far fa-clock"></i> ۴ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+        <article class="blog-card" data-category="مراقبت از جواهرات">
+          <div class="card-img-wrapper">
+            <img
+              src="./images/blog2.jpeg"
+              alt="مراقبت از طلا و زمرد"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">مراقبت از جواهرات</span>
+            <h3 class="card-title">مراقبت از طلا و زمرد</h3>
+            <p>
+              درخشش جواهرات لوکس خود را برای نسل‌ها حفظ کنید. نکات کاربردی و
+              تخصصی.
+            </p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۴-۲۸</span
+              ><span><i class="far fa-clock"></i> ۵ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+        <article class="blog-card" data-category="ترندهای مد">
+          <div class="card-img-wrapper">
+            <img
+              src="./images/blog3.jpeg"
+              alt="ترندهای جواهرات بهار"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">ترندهای مد</span>
+            <h3 class="card-title">ترندهای جواهرات بهار ۲۰۲۵</h3>
+            <p>
+              بازگشت سیلوئت‌های وینتیج و برش‌های زمرد. آنچه در فصل جدید مد است.
+            </p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۴-۲۰</span
+              ><span><i class="far fa-clock"></i> ۳ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+        <article class="blog-card" data-category="داستان‌های برند">
+          <div class="card-img-wrapper">
+            <img src="./images/blog4.jpeg" alt="تجربه سفارشی" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">داستان‌های برند</span>
+            <h3 class="card-title">تجربه سفارشی ما</h3>
+            <p>
+              چگونه قطعات سفارشی برای خانواده‌های سلطنتی می‌سازیم. پشت صحنه
+              کارگاه.
+            </p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۴-۱۲</span
+              ><span><i class="far fa-clock"></i> ۷ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+        <article class="blog-card" data-category="سنگ‌های قیمتی">
+          <div class="card-img-wrapper">
+            <img src="./images/blog5.jpeg" alt="تاریخچه زمرد" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">سنگ‌های قیمتی</span>
+            <h3 class="card-title">تاریخچه زمرد در سلطنت</h3>
+            <p>از کلئوپاترا تا دوشس ویندزور. سفر یک سنگ قیمتی در طول تاریخ.</p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۴-۰۵</span
+              ><span><i class="far fa-clock"></i> ۶ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+        <article class="blog-card" data-category="راهنماهای جواهرات">
+          <div class="card-img-wrapper">
+            <img
+              src="./images/blog6.jpeg"
+              alt="مینیمالیست مدرن"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-content">
+            <span class="category-badge">راهنماهای جواهرات</span>
+            <h3 class="card-title">مینیمالیست در مقابل ماکسیمالیست</h3>
+            <p>پیدا کردن امضای لوکس خود. راهنمای انتخاب سبک شخصی در جواهرات.</p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ۲۰۲۵-۰۳-۲۸</span
+              ><span><i class="far fa-clock"></i> ۴ دقیقه مطالعه</span>
+            </div>
+            <a
+              class="read-more"
+              href="#"
+              onclick="
+                alert('باز کردن مقاله');
+                return false;
+              "
+              >ادامه مطلب ←</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">با سردبیر ما آشنا شوید</h2>
+      <div class="author-spotlight">
+        <div class="author-img">
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="ایزابلا روسی"
+            loading="lazy"
+          />
+        </div>
+        <div class="author-bio">
+          <h3>ایزابلا روسی</h3>
+          <p>
+            سردبیر و مدیر خلاق. ایزابلا با بیش از ۱۵ سال تجربه در نشر لوکس،
+            دیدگاهی عمیق به میراث جواهرات و ظرافت مدرن می‌آورد.
+          </p>
+          <p>✍️ منتشر شده ۴۲ مقاله</p>
+          <div class="social-icons">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">داستان‌های کلکسیونرها</h2>
+      <div class="stories-grid">
+        <div class="story-card">
+          <i class="fas fa-crown"></i>
+          <h3>یک پیشنهاد سلطنتی</h3>
+          <p>او گردنبند زمردی را انتخاب کرد که مادربزرگم زمانی تحسین می‌کرد.</p>
+          <p><strong>- ویکتوریا ه.</strong></p>
+          <button
+            class="btn-gold"
+            style="margin-top: 1rem"
+            onclick="alert('مطالعه داستان کامل')"
+          >
+            مطالعه داستان کامل
+          </button>
+        </div>
+        <div class="story-card">
+          <i class="fas fa-gem"></i>
+          <h3>میراث موروثی</h3>
+          <p>انتقال حلقه امرالد مانند در دست داشتن تاریخ در کف دستم بود.</p>
+          <p><strong>- جیمز دبلیو.</strong></p>
+          <button
+            class="btn-gold"
+            style="margin-top: 1rem"
+            onclick="alert('مطالعه داستان کامل')"
+          >
+            مطالعه داستان کامل
+          </button>
+        </div>
+        <div class="story-card">
+          <i class="fas fa-heart"></i>
+          <h3>گنج سالگرد</h3>
+          <p>
+            هر جزئیات از فداکاری بی‌زمان سخن می‌گوید. هدیه‌ای که عشق ۲۵ ساله ما
+            را جشن گرفت.
+          </p>
+          <p><strong>- النور آر.</strong></p>
+          <button
+            class="btn-gold"
+            style="margin-top: 1rem"
+            onclick="alert('مطالعه داستان کامل')"
+          >
+            مطالعه داستان کامل
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
+        <h2>به مجله لوکس ما بپیوندید</h2>
+        <p>
+          جدیدترین مقالات، ترندها و پیشنهادات ویژه را مستقیماً در ایمیل خود
+          دریافت کنید.
+        </p>
+        <form id="newsletterForm">
+          <input type="email" placeholder="ایمیل شما" required />
+          <button type="submit" class="btn-gold">عضویت</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>BAZARSAZAN</h2>
+          <p>مجموعه گردنبندهای دست‌ساز ما را کشف کنید.</p>
+        </div>
+        <div class="footer-links">
+          <h3>فروشگاه</h3>
+          <ul>
+            <li><a href="#necklaces">گردنبند</a></li>
+            <li><a href="#rings">انگشتر</a></li>
+            <li><a href="#earrings">گوشواره</a></li>
+            <li><a href="#bracelets">دستبند</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>شرکت</h3>
+          <ul>
+            <li><a href="#">درباره‌ی ما</a></li>
+            <li><a href="#">کالکشن‌ها</a></li>
+            <li><a href="#">وبلاگ</a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>به دنیای ما بپیوندید</h3>
+          <p>به‌روزرسانی‌ها و پیشنهادهای ویژه را دریافت کنید.</p>
+          <form>
+            <input type="email" placeholder="ایمیل شما" /><button>عضویت</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 BazarSazan AzarYazdan. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="بازگشت به بالا">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      (function () {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+        const backToTopBtn = document.getElementById("backToTop");
+        const categoryCards = document.querySelectorAll(".cat-card");
+        const newsletterForm = document.getElementById("newsletterForm");
+        const blogCards = document.querySelectorAll(".blog-card");
+        const featuredArticle = document.getElementById("featuredArticle");
+        let activeCategory = "همه";
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navLinks.classList.toggle("active");
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          }
+        });
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) backToTopBtn.style.opacity = "1";
+          else backToTopBtn.style.opacity = "0";
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        categoryCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            categoryCards.forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
+            activeCategory = card.getAttribute("data-cat");
+            applyFilters();
+          });
+        });
+
+        function applyFilters() {
+          blogCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+            const matchesCategory =
+              activeCategory === "همه" || category === activeCategory;
+            card.style.display = matchesCategory ? "" : "none";
+          });
+          if (featuredArticle) {
+            const featuredCategory =
+              featuredArticle.getAttribute("data-category");
+            const matchesCategory =
+              activeCategory === "همه" || featuredCategory === activeCategory;
+            featuredArticle.style.display = matchesCategory ? "" : "none";
+          }
+        }
+
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = newsletterForm.querySelector(
+            'input[type="email"]',
+          );
+          if (emailInput.value.trim()) {
+            alert("✨ از عضویت شما در مجله امرالد سپاسگزاریم.");
+            newsletterForm.reset();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1024) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

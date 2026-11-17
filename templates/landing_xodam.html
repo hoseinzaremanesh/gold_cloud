@@ -1,0 +1,17 @@
+ {% for product in products %}
+      <div class="best-card">
+        <div class="img-box">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+          <div class="icons">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-eye"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+        <div class="best-info">
+          <div class="stars">★★★★★</div>
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.price }} تومان</p>
+        </div>
+      </div>
+      {% endfor %}

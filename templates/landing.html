@@ -1,0 +1,649 @@
+{% load static %}
+<!doctype html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxora Jewelry</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+
+  <style>
+    /* ========== استایل باکس جستجو ========== */
+    .search-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 15vh;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .search-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .search-box-container {
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      border: 2px solid #d4af37;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease;
+    }
+
+    .search-overlay.active .search-box-container {
+      transform: translateY(0);
+    }
+
+    .search-box-container .search-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e8e0d0;
+    }
+
+    .search-box-container .search-header h3 {
+      font-family: "Lalezar", sans-serif;
+      color: #0d3d2e;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-box-container .search-header h3 i {
+      color: #d4af37;
+    }
+
+    .close-search-btn {
+      background: none;
+      border: none;
+      color: #999;
+      font-size: 1.2rem;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .close-search-btn:hover {
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 1rem 3.5rem 1rem 1.2rem;
+      border: 2px solid #e0d8c8;
+      border-radius: 14px;
+      font-family: "Lalezar", sans-serif;
+      font-size: 1rem;
+      color: #1a1a1a;
+      background: #fafaf7;
+      transition: all 0.3s ease;
+      direction: rtl;
+    }
+
+    .search-input-wrapper input:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+    }
+
+    .search-input-wrapper input::placeholder {
+      color: #bbb;
+    }
+
+    .search-input-wrapper .search-icon-inside {
+      position: absolute;
+      right: 1.2rem;
+      color: #d4af37;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .search-submit-btn {
+      position: absolute;
+      left: 0.5rem;
+      background: #d4af37;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: "Lalezar", sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .search-submit-btn:hover {
+      background: #0d3d2e;
+    }
+
+    /* ========== ریسپانسیو ========== */
+    @media (max-width: 768px) {
+      .search-overlay {
+        padding-top: 10vh;
+      }
+
+      .search-box-container {
+        width: 95%;
+        padding: 1.2rem;
+      }
+
+      .search-input-wrapper input {
+        padding: 0.85rem 3rem 0.85rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .search-submit-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-box-container {
+        border-radius: 16px;
+      }
+
+      .search-submit-btn {
+        position: static;
+        width: 100%;
+        margin-top: 0.8rem;
+        padding: 0.7rem;
+      }
+
+      .search-input-wrapper {
+        flex-direction: column;
+      }
+
+      .search-input-wrapper input {
+        padding-right: 2.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- ==================== نوار بالایی (در موبایل مخفی می‌شود) ==================== -->
+    <div class="top-bar">ارسال رایگان برای خریدهای بالای 5 میلیون تومان</div>
+
+    <!-- ==================== نوبار اصلی (با منوی همبرگری جدید) ==================== -->
+    <nav class="navbar">
+      <!-- دکمه همبرگر -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- لوگو -->
+      <div class="logo">
+        <h2>AZARYAZDAN</h2>
+      </div>
+
+      <!-- لینک‌های ناوبری -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{% url 'landing' %}">خانه</a></li>
+        <li><a href="{% url 'shop' %}">فروشگاه</a></li>
+        <li><a href="../blog.html">وبلاگ</a></li>
+        <li><a href="../about.html">درباره‌ی ما</a></li>
+        <li><a href="#">راه‌های ارتباطی</a></li>
+      </ul>
+
+      <!-- دکمه‌های ورود و ثبت‌نام -->
+      <div class="nav-btn">
+        {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}" class="sign">{{ user.first_name|default:user.username }}</a>
+        <a href="{% url 'logout' %}" class="log">خروج</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="log">ورود</a>
+        <a href="{% url 'login' %}" class="sign">ثبت‌نام</a>
+        {% endif %}
+      </div>
+
+      <!-- آیکون‌ها (فقط در دسکتاپ نمایش داده می‌شوند) -->
+      <div class="nav-icons">
+        <a href="#" id="searchToggleBtn"><i class="fas fa-magnifying-glass"></i></a>
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <span class="cart-badge">
+          <a href="{% url 'cart' %}"><i class="fas fa-shopping-bag"></i></a>
+          <span class="cart-count {% if not cart_count %}zero{% endif %}" id="cartCountBadge">{{ cart_count }}</span>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== باکس جستجو (Overlay) ==================== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box-container">
+      <div class="search-header">
+        <h3><i class="fas fa-search"></i> جستجو در محصولات</h3>
+        <button class="close-search-btn" id="closeSearchBtn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="نام محصول، دسته‌بندی یا کد محصول را جستجو کنید..."
+          autocomplete="off" />
+        <i class="fas fa-search search-icon-inside"></i>
+        <button class="search-submit-btn" id="searchSubmitBtn">جستجو</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== هیرو ==================== -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="small-title">جواهرات لوکس</span>
+        <h1>
+          ظرافت بی‌انتهای<br />
+          گالری AZARYAZDAN
+        </h1>
+        <p>
+          جواهرات نفیسی که برای زنانی که عاشق ظرافت، زیبایی و تجمل بی‌زمان
+          هستند، ساخته شده است.
+        </p>
+        <div class="hero-buttons">
+          <a href="{% url 'shop' %}" class="btn gold-btn"> خرید محصول </a>
+          <a href="{% url 'shop' %}" class="btn transparent-btn"> مشاهده محصولات دیگر </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== کالکشن‌ها ==================== -->
+  <section class="collections">
+    <div class="section-title">
+      <span></span>
+      <h2>NEW COLLECTION</h2>
+      <span></span>
+    </div>
+    <div class="collection-grid">
+      <div class="collection-card card1">
+        <div class="card-content">
+          <h3>کالکشن زمرد</h3>
+          <a href="#">
+            <i class="fas fa-angle-right"></i>
+            مشاهده محصولات
+          </a>
+        </div>
+      </div>
+      <div class="collection-card card2">
+        <div class="card-content">
+          <h3>جواهرات سلطنتی</h3>
+          <a href="#">
+            <i class="fas fa-angle-right"></i>
+            مشاهده محصولات
+          </a>
+        </div>
+      </div>
+      <div class="collection-card card3">
+        <div class="card-content">
+          <h3>کالکشن اولد مانی</h3>
+          <a href="#">
+            <i class="fas fa-angle-right"></i>
+            مشاهده محصولات
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== پرفروش‌ترین‌ها ==================== -->
+  <section class="best-sellers">
+    <div class="section-title">
+      <span></span>
+      <h2>پرفروش‌ترین‌ها</h2>
+      <span></span>
+    </div>
+    <div class="best-grid">
+      <!-- کارت محصول ۱ -->
+      {% for product in products %}
+      <div class="best-card">
+
+        <div class="img-box">
+          <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+          </a>
+
+          <div class="icons">
+            <i class="fa-regular fa-heart"></i>
+
+            <a href="{% url 'product_detail' product.id %}">
+              <i class="fa-regular fa-eye"></i>
+            </a>
+
+            <a href="{% url 'add_to_cart' product.id %}">
+              <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart"><i
+                  class="fa-solid fa-cart-shopping"></i></a>
+            </a>
+          </div>
+        </div>
+
+        <div class="best-info">
+          <div class="stars">★★★★★</div>
+
+          <h3>
+            <a href="{% url 'product_detail' product.id %}">
+              {{ product.name }}
+            </a>
+          </h3>
+
+          <p>{{ product.price }} تومان</p>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+
+
+  <!-- ==================== درباره ما ==================== -->
+  <section class="about">
+    <div class="about-image">
+      <div class="img-1">
+        <img src="{% static 'images/about1.jpeg' %}" alt="about" />
+      </div>
+      <div class="img-2">
+        <img src="{% static 'images/about2.jpeg' %}" alt="about" />
+      </div>
+    </div>
+    <div class="about-text">
+      <span>درباره‌ی LUXORA</span>
+      <h2>
+        طراحی شده برای <br />
+        ظرافتی جاودانه
+      </h2>
+      <p>
+        جواهرات ما با شور، دقت و مهارتی لوکس طراحی می‌شوند تا زیبایی
+        فراموش‌نشدنی خلق کنند.
+      </p>
+      <a href="#" class="btn gold-btn">داستان ما</a>
+    </div>
+  </section>
+
+  <!-- ==================== ویژگی‌ها ==================== -->
+  <section class="features">
+    <div class="feature-box">
+      <h4>حمل و نقل رایگان</h4>
+      <p>تحویل در سراسر ایران</p>
+    </div>
+    <div class="feature-box">
+      <h4>بسته پریمیوم</h4>
+      <p>بسته‌بندی لاکچری</p>
+    </div>
+    <div class="feature-box">
+      <h4>هنر دست</h4>
+      <p>دقت ساخت بالا</p>
+    </div>
+    <div class="feature-box">
+      <h4>گارانتی مادام‌العمر</h4>
+      <p>کیفیت قابل اعتماد</p>
+    </div>
+  </section>
+
+  <!-- ==================== نظرات مشتریان ==================== -->
+  <section class="testimonials">
+    <div class="section-title">
+      <h2>نظرات مشتری‌های LUXORA</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«کیفیت کاملاً شگفت‌انگیز است و جواهرات به زیبایی می‌درخشند.»</p>
+        <h5>— Sarah J.</h5>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«بسته‌بندی زیبا و طرح‌های ماندگار. اکیداً توصیه می‌شود.»</p>
+        <h5>— Maryam R.</h5>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«تجربه‌ای لوکس از ابتدا تا انتها. من عاشق تک تک قطعات هستم.»</p>
+        <h5>— Saghar T.</h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ویدیو ==================== -->
+  <section class="new-video">
+    <div class="video">
+      <video src="{% static 'images/video.mp4' %}" controls="" loop></video>
+    </div>
+    <div class="video-content">
+      <span> LUXORA</span>
+      <h2>هنر کمال</h2>
+      <p>
+        تماشا کنید که چگونه استادان صنعتگر ما با شور و اشتیاق و دقت به هر قطعه
+        جان می‌بخشند
+      </p>
+      <a href="#" class="video-btn">مشاهده ویدیو</a>
+    </div>
+  </section>
+
+  <!-- ==================== خبرنامه ==================== -->
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h2>به مجموعه هیجان‌انگیز ما بپیوندید</h2>
+      <form>
+        <input type="email" placeholder="ایمیل خود را وارد کنید" />
+        <button type="submit">پیوستن</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== اینستاگرام ==================== -->
+  <section class="instagram">
+    <h2 class="insta-title">FOLLOW OUR JOURNEY ON INSTAGRAM</h2>
+    <div class="insta-gallery">
+      <div class="insta-card">
+        <img src="{% static 'images/insta1.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta2.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta3.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta4.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta5.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta6.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta7.jpeg' %}" alt="" />
+      </div>
+      <div class="insta-card">
+        <img src="{% static 'images/insta8.jpeg' %}" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== فوتر ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>BAZARSAZAN</h2>
+        <p>مجموعه گردنبندهای دست‌ساز ما را کشف کنید.</p>
+      </div>
+      <div class="footer-links">
+        <h3>فروشگاه</h3>
+        <ul>
+          <li><a href="#necklaces">گردنبند</a></li>
+          <li><a href="#rings"> انگشتر</a></li>
+          <li><a href="#earrings">گوشواره </a></li>
+          <li><a href="#bracelets">دستبند </a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>شرکت</h3>
+        <ul>
+          <li><a href="#">درباره‌ی ما</a></li>
+          <li><a href="#">کالکشن‌ها</a></li>
+          <li><a href="#">وبلاگ</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h3>به دنیای ما بپیوندید</h3>
+        <p>به‌روزرسانی‌ها و پیشنهادهای ویژه را دریافت کنید.</p>
+        <form>
+          <input type="email" placeholder="Your Email" />
+          <button>عضویت</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BazarSazan AzarYazdan. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== جاوااسکریپت منوی همبرگر + جستجو ==================== -->
+  <script>
+    // ========== منوی همبرگر ==========
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+    }
+
+    // ========== باکس جستجو ==========
+    const searchToggleBtn = document.getElementById("searchToggleBtn");
+    const searchOverlay = document.getElementById("searchOverlay");
+    const closeSearchBtn = document.getElementById("closeSearchBtn");
+    const searchInput = document.getElementById("searchInput");
+    const searchSubmitBtn = document.getElementById("searchSubmitBtn");
+
+    // باز کردن باکس جستجو
+    if (searchToggleBtn) {
+      searchToggleBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        searchOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+          searchInput.focus();
+        }, 300);
+      });
+    }
+
+    // بستن باکس جستجو
+    function closeSearch() {
+      searchOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+      searchInput.value = "";
+    }
+
+    if (closeSearchBtn) {
+      closeSearchBtn.addEventListener("click", closeSearch);
+    }
+
+    // بستن با کلیک روی overlay (خارج از باکس)
+    searchOverlay.addEventListener("click", (e) => {
+      if (e.target === searchOverlay) {
+        closeSearch();
+      }
+    });
+
+    // بستن با کلید Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && searchOverlay.classList.contains("active")) {
+        closeSearch();
+      }
+    });
+
+    // دکمه جستجو
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+        if (query) {
+          alert('در حال جستجو برای: "' + query + '"');
+          // اینجا می‌تونی کاربر رو به صفحه نتایج جستجو بفرستی:
+          // window.location.href = '/search?q=' + encodeURIComponent(query);
+          closeSearch();
+        } else {
+          searchInput.focus();
+          searchInput.style.borderColor = "#e74c3c";
+          setTimeout(() => {
+            searchInput.style.borderColor = "#e0d8c8";
+          }, 1500);
+        }
+      });
+    }
+
+    // جستجو با Enter
+    if (searchInput) {
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          searchSubmitBtn.click();
+        }
+      });
+    }
+  </script>
+  <script src="{% static 'js/cart.js' %}"></script>
+</body>
+
+</html>

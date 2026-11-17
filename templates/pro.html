@@ -1,0 +1,2528 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="گردنبند سلطنتی زمرد - جواهرات لوکس سبک کهن. صنعت‌گری استثنایی، سنگ‌های زمرد طبیعی و روکش طلای ۱۸ عیار." />
+  <meta name="keywords" content="جواهرات لوکس, گردنبند زمرد, طلای ۱۸ عیار, زمرد سلطنتی, سبک اشرافی قدیمی" />
+  <title>امرالد | گردنبند سلطنتی زمرد</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/category.css' %}" />
+  <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" />
+
+  <style>
+    @font-face {
+      font-family: "Lalezar";
+      src: url("{% static 'fonts/Lalezar-Regular.woff' %}") format("woff"),
+      url("{% static 'fonts/Lalezar-Regular.otf' %}") format("opentype"),
+      url("{% static 'fonts/Lalezar-Regular.ttf' %}") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Lalezar", sans-serif;
+      font-weight: 300;
+      color: #1a1a1a;
+      overflow-x: hidden;
+      line-height: 1.7;
+      background-color: #f5f3ee;
+    }
+
+    :root {
+      --emerald: #0d3d2e;
+      --royal-gold: #b8942e;
+      --gold-light: #d4af37;
+      --cream: #f5f3ee;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-body: #2d2d2d;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .logo,
+    .section-title,
+    .product-title {
+      font-family: "Lalezar", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .top-bar {
+      background: #0a1f18;
+      color: #d4af37;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      padding: 10px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(6, 19, 17, 0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo h2 {
+      color: #fff;
+      font-size: 34px;
+      font-family: "Cormorant Garamond", "Lalezar", serif;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: 0.4s;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .nav-btn {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-btn a {
+      text-decoration: none;
+    }
+
+    .nav-btn .log,
+    .nav-btn .sign {
+      border: 1px solid #d4af37;
+      padding: 0 12px;
+      border-radius: 20px;
+      color: #fff;
+      padding-bottom: 3px;
+      transition: 0.3s;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .nav-btn .log {
+      background: #d4af37;
+    }
+
+    .nav-btn .log:hover {
+      background: transparent;
+    }
+
+    .nav-btn .sign:hover {
+      background: #d4af37;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-icons a {
+      color: #fff;
+      font-size: 14px;
+      transition: 0.4s;
+    }
+
+    .nav-icons a:hover {
+      color: #d4af37;
+    }
+
+    .nav-icons i {
+      color: #d8b56a;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .nav-icons i:hover {
+      color: antiquewhite;
+      transform: translateY(-3px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      z-index: 101;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 2px;
+      background: #d8b56a;
+      transition: 0.3s;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 7rem 5% 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 3rem 0 1.5rem;
+      color: var(--emerald);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background: var(--royal-gold);
+      display: block;
+      margin: 0.8rem auto 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .gallery {
+      position: relative;
+    }
+
+    .main-image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #f0ede5;
+      cursor: zoom-in;
+      box-shadow: var(--shadow-md);
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.25s ease;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .thumbnail-grid {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .thumbnail {
+      width: 85px;
+      height: 85px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .thumbnail:hover {
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .thumbnail.active {
+      border-color: var(--royal-gold);
+      transform: scale(0.95);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-category {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--royal-gold);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .product-title {
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--emerald);
+      line-height: 1.2;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .stars {
+      color: var(--royal-gold);
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    .review-count {
+      color: #6b6b6b;
+      font-size: 0.85rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .price-section {
+      margin: 1.2rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .current-price {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .old-price {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      color: #aaa;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .discount-badge {
+      background: var(--royal-gold);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a2f2a;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .stock-status {
+      margin: 0.8rem 0;
+      color: var(--emerald);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .stock-status i {
+      color: #27ae60;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 1.2rem 1rem;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid #e8e0d0;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--royal-gold);
+    }
+
+    .feature-card i {
+      font-size: 1.8rem;
+      color: var(--royal-gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .feature-card span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #555;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .option-group {
+      margin: 1.5rem 0;
+    }
+
+    .option-label {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: block;
+      color: var(--emerald);
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .option-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .option-btn {
+      background: transparent;
+      border: 1px solid #ccc;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: "Lalezar", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .option-btn:hover {
+      border-color: var(--royal-gold);
+      color: var(--royal-gold);
+    }
+
+    .option-btn.active {
+      background: var(--emerald);
+      color: #fff;
+      border-color: var(--emerald);
+    }
+
+    .purchase-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 48px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .qty-btn {
+      background: #fff;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .qty-btn:hover {
+      background: #f0f0f0;
+      color: var(--royal-gold);
+    }
+
+    .qty-input {
+      width: 50px;
+      text-align: center;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      background: transparent;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .btn-cart,
+    .btn-buy,
+    .btn-wishlist {
+      padding: 0.9rem 1.8rem;
+      border-radius: 48px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-family: "Lalezar", sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-cart {
+      background: var(--emerald);
+      color: #fff;
+    }
+
+    .btn-cart:hover {
+      background: #0a3a2c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15, 76, 58, 0.3);
+    }
+
+    .btn-buy {
+      background: var(--royal-gold);
+      color: #1a2f2a;
+    }
+
+    .btn-buy:hover {
+      background: #b88a2e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201, 160, 61, 0.3);
+    }
+
+    .btn-wishlist {
+      background: transparent;
+      border: 1px solid var(--royal-gold);
+      color: var(--royal-gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-wishlist:hover {
+      background: var(--royal-gold);
+      color: #fff;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #666;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .trust-item i {
+      color: var(--royal-gold);
+      font-size: 1rem;
+    }
+
+    .tabs {
+      margin: 3rem 0;
+    }
+
+    .tab-headers {
+      display: flex;
+      gap: 2rem;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      font-family: "Lalezar", sans-serif;
+      color: #777;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      color: var(--royal-gold);
+    }
+
+    .tab-btn.active {
+      color: var(--royal-gold);
+      font-weight: 600;
+    }
+
+    .tab-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--royal-gold);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .tab-content {
+      padding: 2rem 0;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab-content h3 {
+      color: var(--emerald);
+      margin-bottom: 1rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .tab-content p {
+      color: #555;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      padding: 1rem 1.5rem;
+      font-family: "Lalezar", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .specs-table td:first-child {
+      font-weight: 600;
+      color: var(--emerald);
+      width: 40%;
+      background: #fafafa;
+    }
+
+    .review-summary {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .big-rating {
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--royal-gold);
+      line-height: 1;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      transition: var(--transition);
+      border: 1px solid #e8e0d0;
+    }
+
+    .review-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--royal-gold);
+      flex-shrink: 0;
+    }
+
+    .review-content {
+      flex: 1;
+    }
+
+    .review-content .stars {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .review-content strong {
+      color: var(--emerald);
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .verified-badge {
+      color: var(--royal-gold);
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .review-content p {
+      color: #555;
+      margin-top: 0.5rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .products-slider {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e8e0d0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold-light);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .product-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--emerald);
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .product-info .price {
+      color: var(--royal-gold);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .card-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .card-actions i {
+      cursor: pointer;
+      color: var(--royal-gold);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 50%;
+      background: rgba(201, 160, 61, 0.08);
+    }
+
+    .card-actions i:hover {
+      background: var(--royal-gold);
+      color: #fff;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .insta-item {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      aspect-ratio: 1;
+    }
+
+    .insta-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .insta-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .insta-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 76, 58, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .insta-item:hover .insta-overlay {
+      opacity: 1;
+    }
+
+    .insta-overlay i {
+      font-size: 1.8rem;
+      color: var(--royal-gold);
+    }
+
+    .newsletter {
+      background: linear-gradient(135deg, #0d3d2e, #0a2a20);
+      border-radius: 32px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin: 4rem 0;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .newsletter p {
+      color: rgba(255, 255, 240, 0.85);
+      margin-bottom: 1.5rem;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .newsletter form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .newsletter input {
+      padding: 1rem 1.5rem;
+      width: 320px;
+      max-width: 100%;
+      border-radius: 60px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      font-family: "Lalezar", sans-serif;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      transition: var(--transition);
+    }
+
+    .newsletter input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter input:focus {
+      outline: none;
+      border-color: var(--gold-light);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .footer {
+      background: #0a1815;
+      padding-top: 100px;
+      border-top: 1px solid rgba(216, 181, 106, 0.15);
+      margin-top: 2rem;
+    }
+
+    .footer-container {
+      width: 84%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 60px;
+    }
+
+    .footer-brand h2 {
+      color: #d8b56a;
+      font-size: 34px;
+      font-family: "Cormorant Garamond", "Lalezar", serif;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      color: #bdbdbd;
+      line-height: 2;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .footer-links h3 {
+      color: white;
+      margin-bottom: 25px;
+      font-family: "Lalezar", sans-serif;
+      font-weight: 300;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #bdbdbd;
+      font-family: "Lalezar", sans-serif;
+      transition: 0.4s;
+    }
+
+    .footer-links a:hover {
+      color: #d8b56a;
+      padding-right: 8px;
+    }
+
+    .footer-newsletter h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-family: "Lalezar", sans-serif;
+      font-weight: 300;
+    }
+
+    .footer-newsletter p {
+      color: #bdbdbd;
+      margin-bottom: 20px;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    .footer-newsletter form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-newsletter input {
+      height: 55px;
+      padding: 0 15px;
+      background: #0a2520;
+      border: 1px solid rgba(216, 181, 106, 0.2);
+      color: white;
+      outline: none;
+      font-family: "Lalezar", sans-serif;
+      border-radius: 8px;
+    }
+
+    .footer-newsletter input:focus {
+      border-color: #d8b56a;
+    }
+
+    .footer-newsletter button {
+      height: 55px;
+      border: none;
+      background: #d8b56a;
+      font-family: "Lalezar", sans-serif;
+      color: #0a1815;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.4s;
+      border-radius: 8px;
+    }
+
+    .footer-newsletter button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(216, 181, 106, 0.3);
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 70px;
+    }
+
+    .footer-social a {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(216, 181, 106, 0.25);
+      color: #d8b56a;
+      text-decoration: none;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    .footer-social a:hover {
+      background: #d8b56a;
+      color: #0a1815;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding: 25px;
+      border-top: 1px solid rgba(216, 181, 106, 0.1);
+    }
+
+    .footer-bottom p {
+      color: #8e8e8e;
+      font-family: "Lalezar", sans-serif;
+    }
+
+    /* =========================================== */
+    /* ========== RESPONSIVE DESIGN ========== */
+    /* =========================================== */
+
+    @media (max-width: 1200px) {
+      .container {
+        padding: 6rem 4% 2rem;
+      }
+
+      .product-grid {
+        gap: 2rem;
+      }
+
+      .product-title {
+        font-size: 2.4rem;
+      }
+
+      .current-price {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+      }
+
+      .feature-card {
+        padding: 1rem 0.8rem;
+      }
+
+      .feature-card i {
+        font-size: 1.5rem;
+      }
+
+      .feature-card span {
+        font-size: 0.8rem;
+      }
+
+      .products-slider {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+      }
+
+      .product-card img {
+        height: 220px;
+      }
+
+      .product-info h4 {
+        font-size: 1rem;
+      }
+
+      .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .footer {
+        padding-top: 80px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        width: 90%;
+        gap: 35px;
+      }
+
+      .footer-brand h2 {
+        font-size: 28px;
+      }
+
+      .footer-brand p {
+        font-size: 13px;
+      }
+
+      .footer-links h3 {
+        font-size: 16px;
+        margin-bottom: 18px;
+      }
+
+      .footer-links a {
+        font-size: 13px;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-newsletter h3 {
+        font-size: 16px;
+      }
+
+      .footer-newsletter p {
+        font-size: 13px;
+      }
+
+      .footer-newsletter input {
+        height: 48px;
+        font-size: 13px;
+      }
+
+      .footer-newsletter button {
+        height: 48px;
+        font-size: 14px;
+      }
+
+      .footer-social {
+        margin-top: 50px;
+        gap: 15px;
+      }
+
+      .footer-social a {
+        width: 48px;
+        height: 48px;
+        font-size: 15px;
+      }
+
+      .footer-bottom {
+        margin-top: 45px;
+        padding: 22px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .top-bar {
+        display: none;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 5%;
+        background: rgba(6, 19, 17, 0.85);
+        backdrop-filter: blur(15px);
+        z-index: 100;
+      }
+
+      .hamburger {
+        display: flex;
+        order: 1;
+      }
+
+      .logo {
+        order: 2;
+        margin-right: auto;
+        margin-left: 15px;
+      }
+
+      .nav-icons {
+        display: none;
+      }
+
+      .nav-btn {
+        order: 4;
+        gap: 12px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        right: -100%;
+        width: 75%;
+        height: calc(100vh - 75px);
+        background: rgba(10, 26, 24, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 35px;
+        transition: 0.4s;
+        z-index: 999;
+        border-right: 2px solid #d4af37;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li a {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .nav-btn a {
+        padding: 4px 14px;
+        font-size: 12px;
+      }
+
+      .logo h2 {
+        font-size: 28px;
+      }
+
+      .container {
+        padding: 5rem 4% 2rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .product-title {
+        font-size: 2rem;
+      }
+
+      .current-price {
+        font-size: 1.8rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .products-slider {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+
+      .product-card img {
+        height: 240px;
+      }
+
+      .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .tab-headers {
+        gap: 1.2rem;
+      }
+
+      .tab-btn {
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        padding-top: 60px;
+      }
+
+      .footer-container {
+        width: 92%;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 25px;
+        text-align: center;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-brand p {
+        max-width: 350px;
+      }
+
+      .footer-links:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+      }
+
+      .footer-links:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: center;
+      }
+
+      .footer-newsletter {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        text-align: center;
+      }
+
+      .footer-brand h2 {
+        font-size: 24px;
+      }
+
+      .footer-brand p {
+        font-size: 12px;
+      }
+
+      .footer-links h3 {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-links li {
+        margin-bottom: 6px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+      }
+
+      .footer-newsletter h3 {
+        font-size: 14px;
+      }
+
+      .footer-newsletter p {
+        font-size: 12px;
+      }
+
+      .footer-newsletter form {
+        max-width: 350px;
+        margin: 0 auto;
+      }
+
+      .footer-newsletter input {
+        height: 44px;
+        font-size: 12px;
+      }
+
+      .footer-newsletter button {
+        height: 44px;
+        font-size: 13px;
+      }
+
+      .footer-social {
+        margin-top: 35px;
+        gap: 12px;
+      }
+
+      .footer-social a {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+      }
+
+      .footer-bottom {
+        margin-top: 35px;
+        padding: 18px;
+      }
+
+      .footer-bottom p {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo h2 {
+        font-size: 24px;
+      }
+
+      .nav-btn {
+        gap: 8px;
+      }
+
+      .nav-btn a {
+        padding: 4px 10px;
+        font-size: 11px;
+      }
+
+      .nav-links {
+        width: 85%;
+      }
+
+      .container {
+        padding: 4.5rem 4% 1.5rem;
+      }
+
+      .product-title {
+        font-size: 1.6rem;
+      }
+
+      .current-price {
+        font-size: 1.5rem;
+      }
+
+      .old-price {
+        font-size: 1rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+
+      .feature-card {
+        padding: 1rem 0.6rem;
+        border-radius: 18px;
+      }
+
+      .feature-card i {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .feature-card span {
+        font-size: 0.75rem;
+      }
+
+      .thumbnail {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+      }
+
+      .purchase-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .purchase-section .btn-cart,
+      .purchase-section .btn-buy,
+      .purchase-section .btn-wishlist {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .btn-cart,
+      .btn-buy,
+      .btn-wishlist {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+      }
+
+      .tab-headers {
+        gap: 0.8rem;
+      }
+
+      .tab-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0;
+      }
+
+      .products-slider {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .product-card img {
+        height: 200px;
+      }
+
+      .product-card {
+        border-radius: 18px;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-info h4 {
+        font-size: 0.9rem;
+      }
+
+      .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+      }
+
+      .insta-item {
+        border-radius: 14px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+      }
+
+      .newsletter {
+        padding: 2rem 1rem;
+        border-radius: 24px;
+        margin: 2.5rem 0;
+      }
+
+      .newsletter h2 {
+        font-size: 1.5rem;
+      }
+
+      .newsletter p {
+        font-size: 0.9rem;
+      }
+
+      .newsletter input {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+
+      .review-card {
+        padding: 1.2rem;
+        border-radius: 18px;
+      }
+
+      .review-avatar {
+        width: 45px;
+        height: 45px;
+      }
+
+      .big-rating {
+        font-size: 2.5rem;
+      }
+
+      .specs-table td {
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .footer {
+        padding-top: 45px;
+      }
+
+      .footer-container {
+        width: 92%;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 15px;
+        text-align: center;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-links:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+      }
+
+      .footer-links:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: center;
+      }
+
+      .footer-newsletter {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        text-align: center;
+      }
+
+      .footer-brand h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .footer-brand p {
+        font-size: 12px;
+        max-width: 300px;
+        line-height: 1.8;
+      }
+
+      .footer-links h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-links li {
+        margin-bottom: 6px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+      }
+
+      .footer-newsletter h3 {
+        font-size: 14px;
+      }
+
+      .footer-newsletter p {
+        font-size: 12px;
+      }
+
+      .footer-newsletter form {
+        max-width: 350px;
+        margin: 0 auto;
+      }
+
+      .footer-newsletter input {
+        height: 44px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .footer-newsletter button {
+        height: 44px;
+        font-size: 13px;
+      }
+
+      .footer-social {
+        margin-top: 30px;
+        gap: 12px;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        padding: 18px;
+      }
+
+      .footer-bottom p {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h2 {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+
+      .nav-btn a {
+        padding: 3px 7px;
+        font-size: 9px;
+        border-radius: 12px;
+      }
+
+      .nav-links {
+        width: 85%;
+        padding-top: 35px;
+        gap: 25px;
+      }
+
+      .nav-links li a {
+        font-size: 15px;
+      }
+
+      .hamburger span {
+        width: 22px;
+        height: 2px;
+      }
+
+      .container {
+        padding: 4rem 3% 1.5rem;
+      }
+
+      .product-title {
+        font-size: 1.4rem;
+      }
+
+      .current-price {
+        font-size: 1.3rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+
+      .feature-card {
+        padding: 0.8rem 0.5rem;
+        border-radius: 14px;
+      }
+
+      .feature-card i {
+        font-size: 1.1rem;
+      }
+
+      .feature-card span {
+        font-size: 0.7rem;
+      }
+
+      .option-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 30px;
+      }
+
+      .products-slider {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
+
+      .product-card img {
+        height: 160px;
+      }
+
+      .product-info {
+        padding: 0.8rem;
+      }
+
+      .product-info h4 {
+        font-size: 0.8rem;
+      }
+
+      .product-info .price {
+        font-size: 0.85rem;
+      }
+
+      .card-actions i {
+        font-size: 1rem;
+        padding: 0.4rem;
+      }
+
+      .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .newsletter {
+        padding: 1.5rem 0.8rem;
+        border-radius: 20px;
+      }
+
+      .newsletter h2 {
+        font-size: 1.2rem;
+      }
+
+      .newsletter p {
+        font-size: 0.8rem;
+      }
+
+      .tab-headers {
+        gap: 0.5rem;
+      }
+
+      .tab-btn {
+        font-size: 0.7rem;
+      }
+
+      .specs-table td {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
+      }
+
+      .trust-badges {
+        gap: 0.8rem;
+      }
+
+      .trust-item {
+        font-size: 0.75rem;
+      }
+
+      .footer {
+        padding-top: 35px;
+      }
+
+      .footer-container {
+        width: 94%;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 10px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-links:nth-of-type(1) {
+        grid-column: 1;
+      }
+
+      .footer-links:nth-of-type(2) {
+        grid-column: 2;
+      }
+
+      .footer-newsletter {
+        grid-column: 1 / -1;
+      }
+
+      .footer-brand h2 {
+        font-size: 22px;
+      }
+
+      .footer-brand p {
+        font-size: 11px;
+        max-width: 250px;
+      }
+
+      .footer-links h3 {
+        font-size: 13px;
+      }
+
+      .footer-links a {
+        font-size: 11px;
+      }
+
+      .footer-newsletter h3 {
+        font-size: 13px;
+      }
+
+      .footer-newsletter p {
+        font-size: 11px;
+      }
+
+      .footer-newsletter input {
+        height: 38px;
+        font-size: 11px;
+      }
+
+      .footer-newsletter button {
+        height: 38px;
+        font-size: 12px;
+      }
+
+      .footer-social a {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+      }
+
+      .footer-bottom p {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .product-title {
+        font-size: 1.2rem;
+      }
+
+      .current-price {
+        font-size: 1.1rem;
+      }
+
+      .products-slider {
+        gap: 0.6rem;
+      }
+
+      .product-card img {
+        height: 140px;
+      }
+
+      .product-info h4 {
+        font-size: 0.7rem;
+      }
+
+      .footer-container {
+        gap: 15px 8px;
+      }
+
+      .footer-newsletter form {
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">ارسال رایگان برای خریدهای بالای 5 میلیون تومان</div>
+
+  <nav class="navbar" id="navbar">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="logo">
+      <h2>AZARYAZDAN</h2>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{% url 'landing' %}">خانه</a></li>
+      <li><a href="{% url 'shop' %}">فروشگاه</a></li>
+      <li><a href="./blog.html">وبلاگ</a></li>
+      <li><a href="./about.html">درباره ما</a></li>
+      <li><a href="#">ارتباط با ما</a></li>
+    </ul>
+    <div class="nav-btn">
+      {% if user.is_authenticated %}
+      <a href="{% url 'dashboard' %}" class="sign">{{ user.first_name|default:user.username }}</a>
+      <a href="{% url 'logout' %}" class="log">خروج</a>
+      {% else %}
+      <a href="{% url 'login' %}" class="log">ورود</a>
+      <a href="{% url 'login' %}" class="sign">ثبت‌نام</a>
+      {% endif %}
+    </div>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+      <a href="#"><i class="fas fa-heart"></i></a>
+      <span class="cart-badge">
+        <a href="{% url 'cart' %}"><i class="fas fa-shopping-bag"></i></a>
+        <span class="cart-count {% if not cart_count %}zero{% endif %}" id="cartCountBadge">{{ cart_count }}</span>
+      </span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="product-grid">
+      <div class="gallery">
+        <div class="main-image-container" id="mainImageContainer">
+          <img id="mainImage" class="main-image" src="{{ product.image.url }}" alt="{{ product.name }}" />
+        </div>
+        <div class="thumbnail-grid">
+          <div class="thumbnail active" data-full-img="./images/royalp4.jpeg">
+            <img src="{% static 'images/royalp5.jpeg' %}" alt="گردنبند زمرد - نمای ۱" loading="lazy" />
+          </div>
+          <div class="thumbnail" data-full-img="./images/royalp7.jpeg">
+            <img src="{% static 'images/royalp7.jpeg' %}" alt="گردنبند زمرد - نمای ۲" loading="lazy" />
+          </div>
+          <div class="thumbnail" data-full-img="./images/royalp.jpeg">
+            <img src="{% static 'images/royalp.jpeg' %}" alt="گردنبند زمرد - نمای ۳" loading="lazy" />
+          </div>
+          <div class="thumbnail" data-full-img="./images/royalp3.jpeg">
+            <img src="{% static 'images/royalp3.jpeg' %}" alt="گردنبند زمرد - نمای ۴" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="product-category">{{ product.Category.name }}</div>
+        <h1 class="product-title">{{ product.name }}</h1>
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="review-count">(۲۴۸ نظر)</span>
+        </div>
+        <div class="price-section">
+          {% if product.is_sale %}
+          <span class="current-price">
+            {{ product.sale_price }} تومان
+          </span>
+          <span class="old-price">
+            {{ product.price }} تومان
+          </span>
+          <span class="discount-badge">
+            تخفیف {{ product.discount_percent }}٪
+          </span>
+          {% else %}
+          <span class="current-price">
+            {{ product.price }} تومان
+          </span>
+          {% endif %}
+        </div>
+        <div class="stock-status">
+          <i class="fas fa-check-circle"></i> موجود در انبار — آماده ارسال
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-gem"></i><span>سنگ‌های زمرد طبیعی</span>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-ring"></i><span>روکش طلای ۱۸ عیار</span>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-hands"></i><span>صنعت‌گری دستی</span>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-medal"></i><span>گارانتی مادام‌العمر</span>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-gift"></i><span>بسته‌بندی لوکس</span>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-truck"></i><span>تحویل امن</span>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <span class="option-label">رنگ طلا</span>
+          <div class="option-buttons" id="colorOptions">
+            <button class="option-btn active" data-color="gold">طلایی</button>
+            <button class="option-btn" data-color="rose">رزگلد</button>
+            <button class="option-btn" data-color="white">طلای سفید</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <span class="option-label">سایز</span>
+          <div class="option-buttons" id="sizeOptions">
+            <button class="option-btn" data-size="s">S</button>
+            <button class="option-btn active" data-size="m">M</button>
+            <button class="option-btn" data-size="l">L</button>
+          </div>
+        </div>
+
+        <div class="purchase-section">
+          <div class="quantity-selector">
+            <button class="qty-btn" id="minusQty">−</button>
+            <input type="text" id="qtyInput" class="qty-input" value="1" readonly />
+            <button class="qty-btn" id="plusQty">+</button>
+          </div>
+          <button class="btn-cart" id="addToCartBtn">
+            <i class="fas fa-shopping-bag"></i> افزودن به سبد خرید
+          </button>
+          <button class="btn-buy" id="buyNowBtn">خرید فوری</button>
+          <button class="btn-wishlist" id="wishlistBtn">
+            <i class="far fa-heart"></i> علاقه‌مندی
+          </button>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-item">
+            <i class="fas fa-globe"></i> ارسال رایگان به سراسر جهان
+          </div>
+          <div class="trust-item"><i class="fas fa-lock"></i> پرداخت امن</div>
+          <div class="trust-item">
+            <i class="fas fa-gem"></i> ضمانت اصالت کالا
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-headset"></i> پشتیبانی مادام‌العمر
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab-headers">
+        <button class="tab-btn active" data-tab="desc">توضیحات</button>
+        <button class="tab-btn" data-tab="specs">مشخصات فنی</button>
+        <button class="tab-btn" data-tab="shipping">
+          حمل و نقل و بازگشت
+        </button>
+        <button class="tab-btn" data-tab="warranty">گارانتی</button>
+      </div>
+      <div id="desc" class="tab-content active">
+        <h3>توضیحات محصول</h3>
+        <p>{{ product.description|default:"توضیحاتی برای این محصول ثبت نشده است." }}</p>
+      </div>
+      <div id="specs" class="tab-content">
+        <h3>مشخصات فنی</h3>
+        <table class="specs-table">
+          <tr>
+            <td><strong>جنس</strong></td>
+            <td>طلای ۱۸ عیار</td>
+          </tr>
+          <tr>
+            <td><strong>سنگ قیمتی</strong></td>
+            <td>زمرد طبیعی (۲.۴ قیراط)</td>
+          </tr>
+          <tr>
+            <td><strong>وزن</strong></td>
+            <td>۱۲.۴ گرم</td>
+          </tr>
+          <tr>
+            <td><strong>طول زنجیر</strong></td>
+            <td>۴۵ سانتی‌متر (قابل تنظیم)</td>
+          </tr>
+          <tr>
+            <td><strong>مجموعه</strong></td>
+            <td>زمرد سلطنتی</td>
+          </tr>
+          <tr>
+            <td><strong>کشور سازنده</strong></td>
+            <td>ایتالیا</td>
+          </tr>
+          <tr>
+            <td><strong>گارانتی</strong></td>
+            <td>مادام‌العمر</td>
+          </tr>
+        </table>
+      </div>
+      <div id="shipping" class="tab-content">
+        <h3>حمل و نقل و بازگشت کالا</h3>
+        <p>
+          <strong>ارسال اکسپرس رایگان</strong> در سراسر جهان — تحویل ۲ تا ۴
+          روز کاری.
+        </p>
+        <p>
+          تمامی سفارشات با <strong>بسته‌بندی هدیه لوکس</strong> و
+          <strong>بیمه کامل</strong> ارسال می‌شوند.
+        </p>
+        <p>
+          بازگشت کالا تا <strong>۱۴ روز</strong> در شرایط اولیه پذیرفته
+          می‌شود.
+        </p>
+      </div>
+      <div id="warranty" class="tab-content">
+        <h3>گارانتی و خدمات</h3>
+        <p>
+          <strong>گارانتی مادام‌العمر</strong> در برابر نقص‌های ساخت و تولید.
+        </p>
+        <p><strong>تمیزکاری و بازرسی رایگان</strong> دو بار در سال.</p>
+        <p>
+          <strong>خدمات تغییر سایز مادام‌العمر</strong> برای انگشترها و تنظیم
+          زنجیر.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="section-title">نظرات مشتریان</h2>
+    <div class="review-summary">
+      <div class="big-rating">۴.۹ / ۵</div>
+      <div class="stars">★★★★★</div>
+      <div style="
+            color: #777;
+            margin-top: 0.5rem;
+            font-family: &quot;Lalezar&quot;, sans-serif;
+          ">
+        بر اساس ۲۴۸ نظر تأیید شده
+      </div>
+    </div>
+
+    <div class="review-card">
+      <img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="ویکتوریا" loading="lazy" />
+      <div class="review-content">
+        <div class="stars">★★★★★</div>
+        <strong>ویکتوریا آ.</strong><span class="verified-badge"><i class="fas fa-check-circle"></i> خرید تأیید
+          شده</span>
+        <p>
+          فوق‌العاده نفس‌گیر. زمرد مانند گنجی سلطنتی می‌درخشد. بسته‌بندی آن یک
+          اثر هنری بود.
+        </p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="هنری" loading="lazy" />
+      <div class="review-content">
+        <div class="stars">★★★★★</div>
+        <strong>هنری سی.</strong><span class="verified-badge"><i class="fas fa-check-circle"></i> خرید تأیید شده</span>
+        <p>
+          صنعت‌گری بی‌نقص و بسته‌بندی یک اثر هنری است. همسرم از دریافت این
+          گردنبند به وجد آمد.
+        </p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img class="review-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="النور" loading="lazy" />
+      <div class="review-content">
+        <div class="stars">★★★★★</div>
+        <strong>النور آر.</strong><span class="verified-badge"><i class="fas fa-check-circle"></i> خرید تأیید شده</span>
+        <p>زیبا، بی‌زمان و واقعاً لوکس. ارزش هر ریالش را دارد.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">شاید اینها را نیز دوست داشته باشید</h2>
+    <div class="products-slider">
+      <div class="product-card">
+        <img src="{% static 'images/img1.jpeg' %}" alt="انگشتر هاله زمردی" loading="lazy" />
+        <div class="product-info">
+          <h4>انگشتر هاله زمردی</h4>
+          <div class="price">24/000/000 تومان</div>
+          <div class="card-actions">
+            <i class="far fa-heart"></i><i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="{% static 'images/img2.jpeg' %}" alt="گوشواره قطره‌ای طلایی" loading="lazy" />
+        <div class="product-info">
+          <h4>گوشواره قطره‌ای طلایی</h4>
+          <div class="price">18/000/000 تومان</div>
+          <div class="card-actions">
+            <i class="far fa-heart"></i><i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="{% static 'images/img4.jpeg' %}" alt="دستبند کاف سلطنتی" loading="lazy" />
+        <div class="product-info">
+          <h4>دستبند کاف سلطنتی</h4>
+          <div class="price">32/000/000 تومان</div>
+          <div class="card-actions">
+            <i class="far fa-heart"></i><i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="{% static 'images/img7.jpeg' %}" alt="آویز یاقوت کبود" loading="lazy" />
+        <div class="product-info">
+          <h4>آویز یاقوت کبود</h4>
+          <div class="price">27/000/000 تومان</div>
+          <div class="card-actions">
+            <i class="far fa-heart"></i><i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">اینستاگرام ما را دنبال کنید</h2>
+    <div class="insta-grid">
+      <div class="insta-item">
+        <img src="{% static 'images/insta1.jpeg' %}" alt="پست ۱" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta2.jpeg' %}" alt="پست ۲" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta3.jpeg' %}" alt="پست ۳" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta4.jpeg' %}" alt="پست ۴" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta5.jpeg' %}" alt="پست ۵" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta6.jpeg' %}" alt="پست ۶" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta7.jpeg' %}" alt="پست ۷" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+      <div class="insta-item">
+        <img src="{% static 'images/insta8.jpeg' %}" alt="پست ۸" loading="lazy" />
+        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <h2>به دنیای اختصاصی ما بپیوندید</h2>
+      <p>
+        برای دریافت مجموعه‌های لوکس، پیشنهادات اختصاصی و دسترسی زودهنگام عضو
+        شوید.
+      </p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="آدرس ایمیل شما" required />
+        <button type="submit" class="btn-cart" style="padding: 1rem 2rem; border-radius: 60px">
+          عضویت
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>BAZARSAZAN</h2>
+        <p>مجموعه گردنبندهای دست‌ساز ما را کشف کنید.</p>
+      </div>
+      <div class="footer-links">
+        <h3>فروشگاه</h3>
+        <ul>
+          <li><a href="#necklaces">گردنبند</a></li>
+          <li><a href="#rings">انگشتر</a></li>
+          <li><a href="#earrings">گوشواره</a></li>
+          <li><a href="#bracelets">دستبند</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>شرکت</h3>
+        <ul>
+          <li><a href="#">درباره‌ی ما</a></li>
+          <li><a href="#">کالکشن‌ها</a></li>
+          <li><a href="#">وبلاگ</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h3>به دنیای ما بپیوندید</h3>
+        <p>به‌روزرسانی‌ها و پیشنهادهای ویژه را دریافت کنید.</p>
+        <form>
+          <input type="email" placeholder="ایمیل شما" /><button>عضویت</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 BazarSazan AzarYazdan. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/cart.js' %}"></script>
+  <script>
+    (function () {
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+      document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+
+      const mainImage = document.getElementById("mainImage");
+      const mainImageContainer = document.getElementById("mainImageContainer");
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      thumbnails.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          const fullImgSrc = thumb.getAttribute("data-full-img");
+          mainImage.src = fullImgSrc;
+          thumbnails.forEach((t) => t.classList.remove("active"));
+          thumb.classList.add("active");
+        });
+      });
+      mainImageContainer.addEventListener("mousemove", (e) => {
+        const rect = mainImageContainer.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        mainImage.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+        mainImage.style.transform = "scale(1.6)";
+      });
+      mainImageContainer.addEventListener("mouseleave", () => {
+        mainImage.style.transformOrigin = "center center";
+        mainImage.style.transform = "scale(1)";
+      });
+
+      let selectedColor = "gold",
+        selectedSize = "m",
+        quantity = 1;
+      const qtyInput = document.getElementById("qtyInput");
+      document.querySelectorAll("#colorOptions .option-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll("#colorOptions .option-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedColor = btn.getAttribute("data-color");
+        });
+      });
+      document.querySelectorAll("#sizeOptions .option-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll("#sizeOptions .option-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedSize = btn.getAttribute("data-size");
+        });
+      });
+      document.getElementById("minusQty").addEventListener("click", () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyInput.value = quantity;
+        }
+      });
+      document.getElementById("plusQty").addEventListener("click", () => {
+        if (quantity < 10) {
+          quantity++;
+          qtyInput.value = quantity;
+        }
+      });
+
+      /* ===== افزودن به سبد خرید و خرید فوری (به دیتابیس وصل است) ===== */
+      const addUrl = "{% url 'add_to_cart' product.id %}";
+      const cartUrl = "{% url 'cart' %}";
+
+      function addToCart(goToCart) {
+        fetch(addUrl + "?qty=" + quantity, {
+          headers: { "X-Requested-With": "XMLHttpRequest" },
+        })
+          .then((res) => {
+            if (res.redirected) {
+              window.location.href = res.url;
+              return null;
+            }
+            return res.json();
+          })
+          .then((data) => {
+            if (!data) return;
+            const badge = document.getElementById("cartCountBadge");
+            if (badge) {
+              badge.textContent = data.count;
+              badge.classList.toggle("zero", data.count === 0);
+            }
+            if (goToCart) window.location.href = cartUrl;
+          });
+      }
+
+      document.getElementById("addToCartBtn").addEventListener("click", () => {
+        addToCart(false);
+      });
+      document.getElementById("buyNowBtn").addEventListener("click", () => {
+        addToCart(true);
+      });
+
+      document
+        .getElementById("wishlistBtn")
+        .addEventListener("click", function () {
+          const hi = this.querySelector("i");
+          hi.classList.add("fa-beat");
+          setTimeout(() => hi.classList.remove("fa-beat"), 600);
+          alert("{{ product.name|escapejs }} به لیست علاقه‌مندی اضافه شد.");
+        });
+
+      const tabButtons = document.querySelectorAll(".tab-btn"),
+        tabContents = document.querySelectorAll(".tab-content");
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+          tabContents.forEach((tab) => tab.classList.remove("active"));
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          document.getElementById(tabId).classList.add("active");
+          btn.classList.add("active");
+        });
+      });
+
+      document
+        .querySelectorAll(".product-card .card-actions i")
+        .forEach((icon) => {
+          icon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const pn = icon
+              .closest(".product-card")
+              .querySelector("h4").textContent;
+            if (icon.classList.contains("fa-heart")) {
+              icon.classList.add("fa-beat");
+              setTimeout(() => icon.classList.remove("fa-beat"), 600);
+              alert(`${pn} به علاقه‌مندی اضافه شد.`);
+            } else if (icon.classList.contains("fa-shopping-bag")) {
+              alert(`${pn} به سبد خرید اضافه شد.`);
+            }
+          });
+        });
+
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          const ei = e.target.querySelector('input[type="email"]');
+          if (ei.value.trim()) {
+            alert("از پیوستن شما سپاسگزاریم.");
+            e.target.reset();
+          }
+        });
+    })();
+  </script>
+</body>
+
+</html>

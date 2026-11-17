@@ -1,0 +1,383 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/category.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <title>فروشگاه</title>
+</head>
+
+<body>
+  <header>
+    <!-- ==================== نوار بالایی (در تبلت و موبایل مخفی می‌شود) ==================== -->
+    <div class="top-bar">ارسال رایگان برای خریدهای بالای 5 میلیون تومان</div>
+
+    <!-- ==================== نوبار اصلی (با منوی همبرگری جدید) ==================== -->
+    <nav class="navbar">
+      <!-- دکمه همبرگر -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- لوگو -->
+      <div class="logo">
+        <h2>AZARYAZDAN</h2>
+      </div>
+
+      <!-- لینک‌های ناوبری -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{% url 'landing' %}">خانه</a></li>
+        <li>
+          <a href="{% url 'shop' %}" class="active">فروشگاه</a>
+        </li>
+        <li><a href="../blog.html">وبلاگ</a></li>
+        <li><a href="../about.html">درباره‌ی ما</a></li>
+        <li><a href="#">راه‌های ارتباطی</a></li>
+      </ul>
+
+      <!-- دکمه‌های ورود و ثبت‌نام -->
+      <div class="nav-btn">
+        {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}" class="sign">{{ user.first_name|default:user.username }}</a>
+        <a href="{% url 'logout' %}" class="log">خروج</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="log">ورود</a>
+        <a href="{% url 'login' %}" class="sign">ثبت‌نام</a>
+        {% endif %}
+      </div>
+
+      <!-- آیکون‌ها (فقط در دسکتاپ نمایش داده می‌شوند) -->
+      <div class="nav-icons">
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <span class="cart-badge">
+          <a href="{% url 'cart' %}"><i class="fas fa-shopping-bag"></i></a>
+          <span class="cart-count {% if not cart_count %}zero{% endif %}" id="cartCountBadge">{{ cart_count }}</span>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== هیرو ==================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="subtitle"> کلکسیون پرمیوم </span>
+      <h1>کلکسیون لاکچری جواهرات</h1>
+      <p>ظرافت بی‌انتها را که برای زیبایی مدرن ساخته شده است، کشف کنید.</p>
+      <a href="#all-products" class="hero-btn"> کشف کلکسیون </a>
+    </div>
+  </section>
+
+  <!-- ==================== بخش تخفیف‌ها ==================== -->
+  <section class="deals-section">
+    <div class="section-title">
+      <span></span>
+      <h2>شگفت‌انگیز</h2>
+      <span></span>
+    </div>
+
+    <div class="countdown">
+      <div class="time-box">
+        <h3>23</h3>
+        <p>ثانیه</p>
+      </div>
+      <div class="time-box">
+        <h3>15</h3>
+        <p>دقیقه</p>
+      </div>
+      <div class="time-box">
+        <h3>48</h3>
+        <p>ساعت</p>
+      </div>
+    </div>
+
+    <div class="deals-grid">
+      {% for product in deals %}
+      <div class="deal-card">
+
+        <span class="sale-badge">-{{ product.discount_percent }}%</span>
+
+        <a href="{% url 'product_detail' product.id %}">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+        </a>
+
+        <div class="deal-icons">
+          <i class="fa-regular fa-heart"></i>
+
+          <a href="{% url 'product_detail' product.id %}">
+            <i class="fa-regular fa-eye"></i>
+          </a>
+
+          <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+        <div class="deal-info">
+          <h3>
+            <a href="{% url 'product_detail' product.id %}">
+              {{ product.name }}
+            </a>
+          </h3>
+
+          <div class="price">
+            <del>{{ product.price }} تومان</del>
+            <span>{{ product.sale_price }} تومان</span>
+          </div>
+
+          <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart">افزودن به سبد خرید</a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ==================== بخش دسته‌بندی ==================== -->
+  <section class="category-section">
+    <div class="section-title">
+      <span></span>
+      <h2>خرید بر اساس دسته‌بندی</h2>
+      <span></span>
+    </div>
+
+    <div class="category-grid">
+
+      {% for category in categories %}
+      <div class="category-card">
+        {% if category.image %}
+        <img src="{{ category.image.url }}" alt="{{ category.name }}" />
+        {% endif %}
+        <div class="category-overlay">
+          <h3>{{ category.name }}</h3>
+          <a href="{% url 'shop' %}?category={{ category.id }}#all-products">مشاهده کالکشن</a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </section>
+
+  <!-- ==================== پرفروش‌ترین‌ها ==================== -->
+  <section class="best-sellers" id="products">
+    <div class="section-title">
+      <span></span>
+      <h2>پرفروش‌ترین‌ها</h2>
+      <span></span>
+    </div>
+
+    <div class="best-grid">
+
+      {% for product in best_sellers %}
+      <div class="best-card">
+
+        <div class="img-box">
+          <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+          </a>
+
+          <div class="icons">
+            <i class="fa-regular fa-heart"></i>
+
+            <a href="{% url 'product_detail' product.id %}">
+              <i class="fa-regular fa-eye"></i>
+            </a>
+
+            <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart"><i
+                class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+        </div>
+
+        <div class="best-info">
+          <div class="stars">★★★★★</div>
+
+          <h3>
+            <a href="{% url 'product_detail' product.id %}">
+              {{ product.name }}
+            </a>
+          </h3>
+
+          <p>{{ product.price }} تومان</p>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+
+  <!-- ==================== بنر سلطنتی ==================== -->
+  <section class="royal-banner">
+    <div class="royal-overlay"></div>
+    <div class="royal-content">
+      <span>نسخه محدود</span>
+      <h2>کلکسیون جواهر زمرد</h2>
+      <p>
+        با دقت فوق‌العاده در جزئیات، الهام گرفته از ظرافت بی‌انتها و تجمل
+        سلطنتی، ساخته شده است.
+      </p>
+      <a href="#"> مشاهده کلکسیون</a>
+    </div>
+  </section>
+
+  <!-- ==================== همه محصولات ==================== -->
+  <section class="all-products" id="all-products">
+    <div class="section-title">
+      <span></span>
+      <h2>همه محصولات</h2>
+      <span></span>
+    </div>
+
+    <div class="product-filter">
+      <a href="{% url 'shop' %}#all-products">
+        <button class="{% if not selected_category %}active-filter{% endif %}">همه</button>
+      </a>
+
+      {% for category in categories %}
+      {% with cid=category.id|stringformat:'s' %}
+      <a href="{% url 'shop' %}?category={{ category.id }}#all-products">
+        <button class="{% if selected_category == cid %}active-filter{% endif %}">
+          {{ category.name }}
+        </button>
+      </a>
+      {% endwith %}
+      {% endfor %}
+    </div>
+
+    <div class="products-grid">
+
+      {% for product in products %}
+      <div class="product-card">
+
+        {% if product.is_sale %}
+        <span class="badge sale">-{{ product.discount_percent }}%</span>
+        {% else %}
+        <span class="badge new">جدید</span>
+        {% endif %}
+
+        <div class="product-image">
+
+          <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+          </a>
+
+          <div class="product-icons">
+            <i class="fa-regular fa-heart"></i>
+
+            <a href="{% url 'product_detail' product.id %}" title="مشاهده محصول">
+              <i class="fa-regular fa-eye"></i>
+            </a>
+
+            <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart"><i
+                class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+          <h3>
+            <a href="{% url 'product_detail' product.id %}">
+              {{ product.name }}
+            </a>
+          </h3>
+
+          <div class="stars">★★★★★</div>
+
+          {% if product.is_sale %}
+          <span><del>{{ product.price }}</del> {{ product.sale_price }} تومان</span>
+          {% else %}
+          <span>{{ product.price }} تومان</span>
+          {% endif %}
+        </div>
+
+      </div>
+      {% endfor %}
+
+    </div>
+  </section>
+
+  <!-- ==================== فوتر ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>BAZARSAZAN</h2>
+        <p>مجموعه گردنبندهای دست‌ساز ما را کشف کنید.</p>
+      </div>
+      <div class="footer-links">
+        <h3>فروشگاه</h3>
+        <ul>
+          <li><a href="#necklaces">گردنبند</a></li>
+          <li><a href="#rings"> انگشتر</a></li>
+          <li><a href="#earrings">گوشواره </a></li>
+          <li><a href="#bracelets">دستبند </a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>شرکت</h3>
+        <ul>
+          <li><a href="#">درباره‌ی ما</a></li>
+          <li><a href="#">کالکشن‌ها</a></li>
+          <li><a href="#">وبلاگ</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h3>به دنیای ما بپیوندید</h3>
+        <p>به‌روزرسانی‌ها و پیشنهادهای ویژه را دریافت کنید.</p>
+        <form>
+          <input type="email" placeholder="Your Email" />
+          <button>عضویت</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BazarSazan AzarYazdan. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== جاوااسکریپت منوی همبرگر ==================== -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+    }
+  </script>
+  {% if selected_category %}
+  <script>
+    history.scrollRestoration = 'manual';
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var el = document.getElementById('all-products');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    });
+  </script>
+  {% endif %}
+  <script src="{% static 'js/cart.js' %}"></script>
+</body>
+
+
+</html>
